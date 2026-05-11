@@ -1,30 +1,96 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
 import { CONTACT } from '../data/site';
+
+const services = [
+  {
+    href: '/hizmetler/fason-statik-toz-boya',
+    tag: 'HİZMET 1',
+    title: 'Fason Elektrostatik Toz Boya',
+    body: '8 metreye kadar parça, RAL paletinin tamamı, 4 finiş seçeneği ve 2-5 iş günü teslim. Otomotiv, profil, raf sistemi, elektrik panosu ve mimari metal sektörlerine.',
+  },
+  {
+    href: '/hizmetler/tv-aski-aparati',
+    tag: 'HİZMET 2',
+    title: 'VESA TV Askı Aparatı',
+    body: 'Galvaniz çelik gövde, matt siyah toz boya, evrensel VESA uyumu. 4 ürün ailesi, kablo yönetim kanalı standart. Tekli satış, toptan ve proje teklifi.',
+  },
+];
+
+const reasons = [
+  {
+    title: '8 metreye kadar parça',
+    body: 'Fırın hattımız 8 metre uzun parçayı tek seferde işler. Sektörde çoğu fason atölye 3-4 metre üst sınırlıdır.',
+  },
+  {
+    title: '2-5 iş günü teslim',
+    body: 'Standart işlerde ortalama 2-5 iş günü. Teklif aşamasında parça adedi, renk değişimi ve yüzey hazırlığa göre net süre veriyoruz.',
+  },
+  {
+    title: 'RAL paletinin tamamı',
+    body: 'RAL Classic\'in 213 standart rengi, RAL Design ile 1.625 renk. Mat, parlak, yarı mat ve dokulu finiş seçenekleri standarttır.',
+  },
+  {
+    title: 'Entegre üretim avantajı',
+    body: 'Kendi VESA TV askı aparatlarımızı kendi tesisimizde boyuyoruz. Hem fason müşteri hem son ürün üreticisi olduğumuz için süreci içeriden biliyoruz.',
+  },
+];
+
+const miniFaqs = [
+  {
+    q: 'Hangi metaller boyanabilir?',
+    a: 'Çelik, alüminyum, paslanmaz, galvaniz ve demir döküm gibi iletken yüzeyler. Plastik, ahşap ve MDF için uygun değildir.',
+  },
+  {
+    q: 'Kaç metreye kadar parça boyayabiliyorsunuz?',
+    a: '8 metreye kadar parça boyutunu tek seferde işleyebiliyoruz. Büyük endüstriyel parçalar için Türkiye\'de sınırlı sayıda atölyeden biriyiz.',
+  },
+  {
+    q: 'Fiyat nasıl belirleniyor?',
+    a: 'Parça adedi, yüzey alanı, kaplama tipi, renk değişim sayısı ve yüzey hazırlık zorluğuna göre. Net teklif için parça resmi veya numune fotoğrafı yeterli.',
+  },
+  {
+    q: 'TV\'min VESA değerini nasıl öğrenirim?',
+    a: 'TV kullanım kılavuzu veya arka kapak etiketinde belirtilir. Aparatlarımız VESA 75×75 ile 600×400 arasını tek plakada destekler.',
+  },
+];
 ---
 
 <Layout
-  title="Focus SAN — Endüstriyel Toz Boya ve Metal Çözümleri"
+  title="Focussan — Endüstriyel Toz Boya ve Metal Çözümleri"
   description="İstanbul Arnavutköy DESB OSB merkezli, 8 metreye kadar fason elektrostatik toz boya ve VESA standardında TV askı aparatı üreten yerli üretici."
   locale="tr"
 >
-  <section class="hero section">
-    <div class="container container--narrow text-center">
-      <p class="hero__eyebrow">FOCUS SAN</p>
-      <h1>Endüstriyel Toz Boya ve Metal Çözümleri</h1>
-      <p class="lead">
-        İstanbul Arnavutköy DESB OSB merkezli yerli üretici. 8 metreye kadar parça boyutunda fason elektrostatik toz boya ve VESA uyumlu TV askı aparatı üretimi.
-      </p>
-      <div class="hero__cta">
-        <a href="/iletisim" class="btn btn--primary">Teklif Al</a>
-        <a href={CONTACT.whatsappHref} class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+  <section class="home-hero">
+    <div class="home-hero__bg">
+      <img
+        src="/images/factory-hero.jpg"
+        alt="Focussan tesisinde fason elektrostatik toz boya hattı"
+        width="1920"
+        height="1280"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="container home-hero__container">
+      <div class="home-hero__card">
+        <p class="home-hero__eyebrow">FOCUSSAN</p>
+        <h1>Endüstriyel Toz Boya ve Metal Çözümleri</h1>
+        <p class="home-hero__lead">
+          İstanbul Arnavutköy DESB OSB merkezli yerli üretici. 8 metreye kadar parça boyutunda fason elektrostatik toz boya ve VESA uyumlu TV askı aparatı üretimi.
+        </p>
+        <div class="home-hero__cta">
+          <a href="/iletisim" class="btn btn--primary">Teklif Al</a>
+          <a href={CONTACT.whatsappHref} class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section trust">
+  <section class="home-trust">
     <div class="container">
-      <ul class="trust__grid">
+      <ul class="home-trust__grid">
         <li><strong>8 m</strong><span>Maksimum parça boyu</span></li>
         <li><strong>RAL</strong><span>Tam palet erişimi</span></li>
         <li><strong>2-5 gün</strong><span>Ortalama teslim süresi</span></li>
@@ -34,49 +100,189 @@ import { CONTACT } from '../data/site';
     </div>
   </section>
 
-  <section class="section section--dark">
-    <div class="container container--narrow text-center">
-      <h2>Site yapım aşamasında</h2>
-      <p>Bu, yeni Focus SAN web sitesinin geliştirme önizlemesidir. Sayfa içerikleri sırayla tamamlanacaktır.</p>
-      <p>
-        <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a>
-        &nbsp;·&nbsp;
-        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+  <section class="home-section">
+    <div class="container">
+      <div class="home-blockhead">
+        <p class="home-blockhead__eyebrow">HİZMETLERİMİZ</p>
+        <h2>İki ana iş kolumuz</h2>
+        <p class="home-blockhead__lead">Aynı tesiste, aynı kalite standardıyla yürüyen iki tamamlayıcı iş.</p>
+      </div>
+
+      <div class="home-services">
+        {services.map((s) => (
+          <a href={s.href} class="home-service-card">
+            <p class="home-service-card__tag">{s.tag}</p>
+            <h3>{s.title}</h3>
+            <p class="home-service-card__body">{s.body}</p>
+            <span class="home-service-card__action">Detaya git →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section--alt">
+    <div class="container">
+      <div class="home-blockhead">
+        <p class="home-blockhead__eyebrow">NEDEN FOCUSSAN</p>
+        <h2>Kapasite, hız ve renk esnekliği</h2>
+      </div>
+
+      <div class="home-reasons">
+        {reasons.map((r, i) => (
+          <article class="home-reason-card">
+            <span class="home-reason-card__num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{r.title}</h3>
+            <p>{r.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-video">
+    <div class="container container--narrow">
+      <div class="home-blockhead home-blockhead--light">
+        <p class="home-blockhead__eyebrow home-blockhead__eyebrow--accent">ÜRETİM HATTIMIZ</p>
+        <h2>Fabrikamızı görün</h2>
+      </div>
+
+      <div class="home-video__frame">
+        <video
+          id="factory-video"
+          controls
+          preload="none"
+          poster="/videos/focussan-tanitim-poster.jpg"
+          playsinline
+        >
+          <source src="/videos/focussan-tanitim.webm" type="video/webm" />
+          <source src="/videos/focussan-tanitim.mp4" type="video/mp4" />
+          Tarayıcınız HTML5 videoyu desteklemiyor.
+        </video>
+        <button class="home-video__play" type="button" aria-label="Tanıtım videosunu oynat">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="container container--narrow">
+      <div class="home-blockhead">
+        <p class="home-blockhead__eyebrow">SIK SORULANLAR</p>
+        <h2>İlk akla gelen 4 soru</h2>
+      </div>
+
+      <div class="home-faq">
+        {miniFaqs.map((f) => (
+          <details class="home-faq__item">
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <p class="home-faq__more">
+        Tüm sorular ve cevaplar için <a href="/sss">Sıkça Sorulan Sorular</a> sayfasına bakabilirsiniz.
       </p>
     </div>
   </section>
+
+  <CTASection
+    locale="tr"
+    title="Projeniz için teklif alın"
+    description="Parça resmi veya numune fotoğrafı gönderin, net süre ve fiyatla dönüş yapalım."
+  />
 </Layout>
 
-<style>
-  .hero {
-    padding-top: var(--s-8);
-    padding-bottom: var(--s-7);
+<script>
+  const video = document.getElementById('factory-video') as HTMLVideoElement | null;
+  const btn = document.querySelector<HTMLButtonElement>('.home-video__play');
+  if (video && btn) {
+    const hide = () => btn.setAttribute('hidden', '');
+    const show = () => btn.removeAttribute('hidden');
+    btn.addEventListener('click', () => {
+      video.play();
+      hide();
+    });
+    video.addEventListener('play', hide);
+    video.addEventListener('ended', show);
   }
+</script>
 
-  .hero__eyebrow {
+<style>
+  /* ===== Hero (background image + content card) ===== */
+  .home-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 580px;
+    padding: var(--s-7) 0;
+  }
+  .home-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .home-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .home-hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(6, 15, 24, 0.55) 0%, rgba(6, 15, 24, 0.25) 60%, rgba(6, 15, 24, 0.55) 100%);
+  }
+  .home-hero__container {
+    position: relative;
+    z-index: 1;
+  }
+  .home-hero__card {
+    background: rgba(247, 244, 237, 0.72);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--r-lg);
+    padding: var(--s-6) var(--s-5);
+    box-shadow: 0 12px 40px rgba(6, 15, 24, 0.25);
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .home-hero__card h1 {
+    margin: 0 0 var(--s-3);
+  }
+  .home-hero__eyebrow {
     color: var(--c-accent-dark);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.16em;
     margin: 0 0 var(--s-3);
   }
-
-  .hero__cta {
+  .home-hero__lead {
+    color: var(--c-text-muted);
+    font-size: 1.125rem;
+    margin: 0 0 var(--s-4);
+  }
+  .home-hero__cta {
     display: flex;
     gap: var(--s-3);
     justify-content: center;
-    margin-top: var(--s-4);
     flex-wrap: wrap;
   }
 
-  .trust {
+  /* ===== Trust strip ===== */
+  .home-trust {
     background: var(--c-white);
-    border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
     padding: var(--s-5) 0;
   }
-
-  .trust__grid {
+  .home-trust__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: var(--s-4);
@@ -85,21 +291,309 @@ import { CONTACT } from '../data/site';
     padding: 0;
     text-align: center;
   }
-
-  .trust__grid li {
+  .home-trust__grid li {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-
-  .trust__grid strong {
+  .home-trust__grid strong {
     font-size: 1.5rem;
     color: var(--c-primary);
     font-weight: 800;
   }
-
-  .trust__grid span {
+  .home-trust__grid span {
     font-size: 0.85rem;
     color: var(--c-text-muted);
+  }
+
+  /* ===== Generic section ===== */
+  .home-section {
+    padding: var(--s-7) 0;
+  }
+  .home-section--alt {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  /* ===== Block head (centered title) ===== */
+  .home-blockhead {
+    text-align: center;
+    max-width: var(--max-w-narrow);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--s-5);
+  }
+  .home-blockhead h2 {
+    margin: 0 0 var(--s-3);
+  }
+  .home-blockhead__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-2);
+  }
+  .home-blockhead__eyebrow--accent {
+    color: var(--c-accent-light);
+  }
+  .home-blockhead__lead {
+    color: var(--c-text-muted);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .home-blockhead--light .home-blockhead__lead {
+    color: var(--c-text-light);
+  }
+  .home-blockhead--light h2 {
+    color: var(--c-white);
+  }
+
+  /* ===== Services grid (2 cards side-by-side from 800px) ===== */
+  .home-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+  }
+  @media (min-width: 800px) {
+    .home-services {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .home-service-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-5);
+    text-decoration: none;
+    color: var(--c-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+  }
+  .home-service-card:hover {
+    border-color: var(--c-accent);
+    box-shadow: var(--sh-mid);
+    transform: translateY(-2px);
+    color: var(--c-text);
+  }
+  .home-service-card__tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--c-accent-dark);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .home-service-card h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--c-primary);
+  }
+  .home-service-card__body {
+    color: var(--c-text-muted);
+    margin: 0;
+    flex: 1;
+  }
+  .home-service-card__action {
+    margin-top: auto;
+    color: var(--c-accent-dark);
+    font-weight: 600;
+    padding-top: var(--s-3);
+    border-top: 1px solid var(--c-border);
+  }
+
+  /* ===== Reasons (4 cards: 1 / 2 / 4 columns) ===== */
+  .home-reasons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+  }
+  @media (min-width: 700px) {
+    .home-reasons {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1000px) {
+    .home-reasons {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .home-reason-card {
+    background: var(--c-cream);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+  .home-reason-card__num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .home-reason-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--c-primary);
+  }
+  .home-reason-card p {
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  /* ===== Video teaser ===== */
+  .home-video {
+    background: var(--c-primary-deep);
+    color: var(--c-text-light);
+  }
+  .home-video__frame {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    aspect-ratio: 16 / 9;
+    display: flex;
+  }
+  .home-video__frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: rgba(255, 106, 0, 0.92);
+    border: 4px solid rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: background var(--t-fast), transform var(--t-fast);
+  }
+  .home-video__play:hover,
+  .home-video__play:focus-visible {
+    background: var(--c-accent);
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  .home-video__play svg {
+    width: 38px;
+    height: 38px;
+    fill: #fff;
+    margin-left: 4px;
+  }
+  .home-video__play[hidden] {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    .home-video__play {
+      width: 72px;
+      height: 72px;
+      border-width: 3px;
+    }
+    .home-video__play svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .home-video__placeholder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    align-items: center;
+    justify-content: center;
+    color: var(--c-text-light-muted);
+    background: radial-gradient(circle at center, rgba(255, 106, 0, 0.12), transparent 60%), var(--c-primary-deep);
+  }
+  .home-video__icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--c-accent-light);
+    padding-left: 6px;
+  }
+  .home-video__label {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Mini FAQ ===== */
+  .home-faq {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+  .home-faq__item {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+  }
+  .home-faq__item summary {
+    padding: var(--s-3) var(--s-4);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--c-primary);
+    list-style: none;
+    position: relative;
+  }
+  .home-faq__item summary::-webkit-details-marker { display: none; }
+  .home-faq__item summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--s-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform var(--t);
+  }
+  .home-faq__item[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .home-faq__item p {
+    padding: 0 var(--s-4) var(--s-4);
+    margin: 0;
+    color: var(--c-text-muted);
+    line-height: 1.7;
+  }
+  .home-faq__more {
+    margin-top: var(--s-4);
+    text-align: center;
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* ===== Mobile tuning ===== */
+  @media (max-width: 600px) {
+    .home-hero {
+      min-height: 480px;
+      padding: var(--s-6) 0;
+    }
+    .home-hero__card {
+      padding: var(--s-5) var(--s-4);
+    }
   }
 </style>

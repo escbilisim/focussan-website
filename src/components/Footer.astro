@@ -12,15 +12,38 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
+  <div class="site-footer__strip">
+    <div class="container site-footer__strip-inner">
+      <div class="site-footer__strip-item">
+        <span class="site-footer__strip-value">8 m</span>
+        <span class="site-footer__strip-label">{locale === 'tr' ? 'maksimum parça boyu' : 'maximum part length'}</span>
+      </div>
+      <div class="site-footer__strip-item">
+        <span class="site-footer__strip-value">RAL</span>
+        <span class="site-footer__strip-label">{locale === 'tr' ? 'tam palet erişimi' : 'full palette access'}</span>
+      </div>
+      <div class="site-footer__strip-item">
+        <span class="site-footer__strip-value">{locale === 'tr' ? '2-5 gün' : '2-5 days'}</span>
+        <span class="site-footer__strip-label">{locale === 'tr' ? 'ortalama teslim süresi' : 'average turnaround'}</span>
+      </div>
+      <div class="site-footer__strip-item">
+        <span class="site-footer__strip-value">VESA</span>
+        <span class="site-footer__strip-label">{locale === 'tr' ? 'standart uyumlu TV askı' : 'compliant TV mounts'}</span>
+      </div>
+    </div>
+  </div>
+
   <div class="container site-footer__grid">
     <div class="site-footer__brand">
-      <img
-        src="/logo-light.png"
-        alt={SITE.brandName}
-        width="197"
-        height="83"
-        class="site-footer__logo"
-      />
+      <div class="site-footer__logo-card">
+        <img
+          src="/logo.png"
+          alt={SITE.brandName}
+          width="197"
+          height="83"
+          class="site-footer__logo"
+        />
+      </div>
       <p class="site-footer__tagline">{t.footer.tagline}</p>
     </div>
 
@@ -69,14 +92,55 @@ const year = new Date().getFullYear();
   .site-footer {
     background: var(--c-primary-deep);
     color: var(--c-text-light);
-    padding-top: var(--s-7);
-    margin-top: var(--s-8);
+  }
+
+  /* Üst iletişim şeridi (her sayfada görünür) */
+  .site-footer__strip {
+    background: var(--c-primary-mid);
+    border-top: 3px solid var(--c-accent);
+    padding: var(--s-3) 0;
+  }
+  .site-footer__strip-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-3);
+  }
+  @media (min-width: 700px) {
+    .site-footer__strip-inner {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1000px) {
+    .site-footer__strip-inner {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .site-footer__strip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+    color: var(--c-white);
+    padding: var(--s-2) var(--s-3);
+  }
+  .site-footer__strip-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--c-white);
+    line-height: 1.1;
+  }
+  .site-footer__strip-label {
+    font-size: 0.78rem;
+    color: var(--c-text-light-muted);
+    letter-spacing: 0.04em;
   }
 
   .site-footer__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--s-6);
+    padding-top: var(--s-7);
     padding-bottom: var(--s-6);
   }
 
@@ -86,11 +150,18 @@ const year = new Date().getFullYear();
     }
   }
 
+  .site-footer__logo-card {
+    display: inline-flex;
+    background: var(--c-white);
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r-lg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    margin-bottom: var(--s-3);
+  }
   .site-footer__logo {
     height: 56px;
     width: auto;
     display: block;
-    margin-bottom: var(--s-3);
   }
 
   .site-footer__tagline {

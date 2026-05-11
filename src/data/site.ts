@@ -1,11 +1,11 @@
 /**
- * Focus SAN — Site geneli sabitler.
+ * Focussan — Site geneli sabitler.
  * docs/Brainstorm.md ve docs/Knowledge_DB.md ile senkron tutulur.
  */
 
 export const SITE = {
   domain: 'https://focussan.com',
-  brandName: 'Focus SAN',
+  brandName: 'Focussan',
   legalName: 'Focussan Metal Sanayi Ticaret A.Ş.',
   defaultLocale: 'tr' as const,
   locales: ['tr', 'en'] as const,
