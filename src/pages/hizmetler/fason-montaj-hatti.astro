@@ -1,0 +1,416 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Fason Montaj Hattı (Sözleşmeli Montaj ve Paketleme)',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Focussan Metal Sanayi Ticaret A.Ş.',
+    url: 'https://focussan.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'DESB OSB Deliklikaya Mah. GünAlan Caddesi No: 23/1',
+      addressLocality: 'Arnavutköy',
+      addressRegion: 'İstanbul',
+      addressCountry: 'TR',
+    },
+    telephone: '+90 212 873 07 34',
+  },
+  areaServed: { '@type': 'Country', name: 'Türkiye' },
+  description:
+    'Statik toz boya ile birleşik fason montaj hattı hizmeti. Boyadığımız parçaları müşterinin gönderdiği diğer komponentlerle birleştirip, kalite kontrolünden geçirip paketliyoruz. Tek tedarikçi, tek lojistik döngüsü.',
+};
+---
+
+<Layout
+  title="Fason Montaj Hattı · Boya + Montaj + Paketleme · Focussan"
+  description="Statik toz boya yaptığımız parçaları sizin gönderdiğiniz komponentlerle Focussan tesisinde birleştirip, kalite kontrolden geçirip paketliyoruz. Tek tedarikçi, tek lojistik."
+  locale="tr"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">HİZMET</p>
+      <h1>Fason Montaj Hattı</h1>
+      <p class="lead">
+        Statik toz boya yaptığımız parçaları sizin gönderdiğiniz diğer komponentlerle Focussan tesisinde montaj hattımızda birleştiriyor, kalite kontrolünden geçiriyor ve paketleyip teslime hazır gönderiyoruz. Tek tedarikçi, tek lojistik döngüsü, tek kalite kontrol noktası.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tldr">
+    <div class="container container--narrow">
+      <div class="tldr__box">
+        <p class="tldr__label">Özetle</p>
+        <p>
+          <strong>Fason montaj</strong>, ürünün bitmiş hâline ulaşmasında gerekli süreçleri (boya + montaj + paketleme) ayrı tedarikçilere bölmek yerine tek çatı altında yürütmek demektir. Focussan'da yüzey hazırlık ve elektrostatik toz boya tamamlanmış parça, hattan ayrılmadan sizden gelen alt komponentlerle (vida, plastik aksam, kablo, etiket, alüminyum ekstrüzyon, vb.) birleştirilir; görsel ve fonksiyonel kalite kontrolden geçer; sizin veya bizim ambalajınızla paketlenir. Sonuç: aynı tesisten <strong>boyalı + monte + paketlenmiş bitmiş ürün</strong>, doğrudan sevkiyata hazır.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <h2>Süreç Adımları</h2>
+      <ol class="process__list">
+        <li>
+          <span class="process__num">01</span>
+          <h3>Parça Kabul + Envanter</h3>
+          <p>Toz boyanacak metal parçanız ve montajda kullanılacak ek komponentler gelir. Sayım, hasar kontrolü, üretim emrine bağlanır.</p>
+        </li>
+        <li>
+          <span class="process__num">02</span>
+          <h3>Statik Toz Boya</h3>
+          <p>Kendi atölyemizde elektrostatik kaplama (yüzey hazırlık → püskürtme → fırınlama → soğutma). Detay: <a href="/hizmetler/statik-toz-boya">Statik Toz Boya sayfası</a>.</p>
+        </li>
+        <li>
+          <span class="process__num">03</span>
+          <h3>Montaj Hattı</h3>
+          <p>Boyalı parça hattan çıkmadan, ek komponentlerle birleşir. Vida torque, dizilim, yapışkan / sızdırmazlık, kablo tesisat — şartnameye göre.</p>
+        </li>
+        <li>
+          <span class="process__num">04</span>
+          <h3>Kalite Kontrol</h3>
+          <p>Görsel kontrol (renk, yüzey, çizik) + fonksiyonel test (hareket, montaj sıkılığı, ölçü uyumu). Hata durumunda akış geriye alınır.</p>
+        </li>
+        <li>
+          <span class="process__num">05</span>
+          <h3>Etiketleme + Paketleme</h3>
+          <p>Markalı ambalaj veya nötr kraft, baskılı etiket, barkod, kullanım kılavuzu. Sizin görsel kimliğinizle veya bizim standardımızla.</p>
+        </li>
+        <li>
+          <span class="process__num">06</span>
+          <h3>Sevkiyat</h3>
+          <p>Kendi adresinize, deponuza veya direkt son müşterinize. Palet, koli, konteyner — sipariş tipine göre.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--cream value">
+    <div class="container">
+      <div class="value__grid">
+        <div class="value__main">
+          <p class="value__eyebrow">NEDEN BİZE BÖLÜN</p>
+          <h2>Boya + Montaj Tek Çatıda</h2>
+          <p>
+            Boyayı bir atölyeye, montajı başka bir atölyeye gönderirseniz: nakliye, tekrar paketleme, taşıma sırasında çizik riski, ayrı kalite kontrol turları, iki ayrı tedarikçi yönetimi ile uğraşırsınız. Focussan tek tesiste birleşik akış sunuyor.
+          </p>
+        </div>
+        <ul class="value__stats">
+          <li><strong>Tek</strong><span>Lojistik döngüsü</span></li>
+          <li><strong>0</strong><span>Boya-montaj arası taşıma</span></li>
+          <li><strong>Tek</strong><span>Kalite kontrol noktası</span></li>
+          <li><strong>Tek</strong><span>Fatura ve tedarikçi yönetimi</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section use-cases">
+    <div class="container">
+      <h2>Hangi Ürünler İçin Uygun?</h2>
+      <p>Metal ana yapı + ek komponent gerektiren her ürün için uygundur. Birkaç tipik örnek:</p>
+      <div class="use-cases__grid">
+        <div><strong>TV askı aparatları</strong><span>Galvaniz çelik gövde + vida seti + duvar plakası + kullanım kılavuzu (kendi VESA ürünlerimizi bu hatta üretiyoruz)</span></div>
+        <div><strong>Elektrik panosu kabinleri</strong><span>Boyalı sac kabin + iç DIN ray + kapak menteşesi + etiketleme</span></div>
+        <div><strong>Raf ve depolama sistemleri</strong><span>Boyalı çerçeve + bağlantı elemanları + ayak vida seti + montaj kılavuzu</span></div>
+        <div><strong>Mobilya / dekorasyon aksesuarı</strong><span>Metal çerçeve + plastik aksam + ahşap detay + paket içi montaj kılavuzu</span></div>
+        <div><strong>Otomotiv yan sanayi alt grup</strong><span>Boyalı şasi parçası + bağlantı kiti + etiket + barkod</span></div>
+        <div><strong>Yapı / inşaat hardware'i</strong><span>Korkuluk başlığı, menteşe, kapı kolu ve benzeri komposit ürünler</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream pricing">
+    <div class="container container--narrow">
+      <h2>Fiyatlandırma Yaklaşımı</h2>
+      <p>Montaj hattı fiyatı sabit liste değildir, ürün karmaşıklığına göre değişir. Teklif için aşağıdaki faktörleri değerlendiriyoruz:</p>
+      <ul class="numbered-list">
+        <li><span>1.</span> <div><strong>Parça başı işçilik süresi</strong>: Bir ürünün montaj hattında geçirdiği dakika sayısı.</div></li>
+        <li><span>2.</span> <div><strong>Komponent sayısı + tipi</strong>: Vida, plastik klips, kablo, elektronik kart, mekanik aksam vb.</div></li>
+        <li><span>3.</span> <div><strong>Kalite kontrol gereksinimi</strong>: Sadece görsel mi, fonksiyonel test gerekli mi, sertifika gerekli mi?</div></li>
+        <li><span>4.</span> <div><strong>Paketleme tipi</strong>: Nötr kraft → markalı renkli kutu → ahşap palet, maliyet farkı belirgin.</div></li>
+        <li><span>5.</span> <div><strong>Üretim hacmi</strong>: Aylık 1.000 adet ile 50.000 adet farklı hat planlaması ister. Toplu işte birim maliyet düşer.</div></li>
+        <li><span>6.</span> <div><strong>Anlaşma süresi</strong>: Tek seferlik proje ile 12 aylık sözleşmeli üretim ayrı fiyatlanır. Uzun dönemli iş için özel sözleşme indirimi.</div></li>
+      </ul>
+      <p class="muted">Ürününüzün şartnamesini, BOM (Bill of Materials) listesini veya örnek numuneyi gönderin, 1-3 iş günü içinde detaylı teklif hazırlayalım.</p>
+    </div>
+  </section>
+
+  <section class="section how-it-works">
+    <div class="container container--narrow">
+      <h2>İş Akışı Nasıl Başlar?</h2>
+      <ul class="numbered-list">
+        <li><span>A.</span> <div><strong>Ürün değerlendirmesi</strong>: Şartname, BOM, hedef hacim, paketleme isteğinizi gönderirsiniz.</div></li>
+        <li><span>B.</span> <div><strong>Ön teklif + numune üretimi</strong>: Süreç + fiyat çerçevesini paylaşırız. İstenirse pilot bir lot üretip onayınıza sunarız.</div></li>
+        <li><span>C.</span> <div><strong>Sözleşme + komponent tedarik planı</strong>: Sizden gelen komponentlerin teslim akışını netleştiririz (just-in-time veya stoklu).</div></li>
+        <li><span>D.</span> <div><strong>Seri üretim başlangıcı</strong>: Hatta üretim başlar, periyodik kalite raporu paylaşılır.</div></li>
+        <li><span>E.</span> <div><strong>Sevkiyat ve faturalandırma</strong>: Anlaştığımız frekansta paketlenmiş ürün sevk edilir, e-fatura kesilir.</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="container container--narrow">
+      <h2>Sıkça Sorulan Sorular</h2>
+      <details>
+        <summary>Minimum sipariş adedi var mı?</summary>
+        <p>Hat kurulumu için belirli bir taban hacim gerekir. Tipik olarak proje bazlı minimum kararlaştırılır; çok küçük adetler (1-100) için tek seferlik özel düzenleme yapılabilir, seri üretim hedefi varsa 500+ adet ekonomik olur.</p>
+      </details>
+      <details>
+        <summary>Komponentlerin tedariğini Focussan üstlenebilir mi?</summary>
+        <p>Sözleşme tipine göre değerlendiririz. Standart vida, somun, basit plastik aksam gibi raf malzemelerini bizim tedarik etmemiz mümkündür. Özel / OEM komponentler (kendi marka logosu, kalibre edilmiş elektronik vb.) için siz tedarik edersiniz.</p>
+      </details>
+      <details>
+        <summary>Kendi markamızla paketleme yapıyor musunuz?</summary>
+        <p>Evet. Sizin tasarımınızdaki kutu, etiket, kullanım kılavuzu, barkod, broşür kullanırız. Tasarım dosyalarını ve baskı şartnamesini siz iletirseniz, baskı tedariğini de yönetebiliriz.</p>
+      </details>
+      <details>
+        <summary>Aynı üründe kaç farklı SKU yönetebiliyorsunuz?</summary>
+        <p>Hat planlamasıyla farklı renk, ölçü, paket konfigürasyonu yönetebiliriz. Tipik bir TV askı ailesi 4 model × 2 renk × 2 paket = 16 SKU şeklinde rahatça akar. SKU sayısı artarsa hat değişim süresi kalemi planlamaya eklenir.</p>
+      </details>
+      <details>
+        <summary>Stok yönetimi (depolama, sevkiyat zamanlaması) sizde mi?</summary>
+        <p>Anlaşmaya göre değişir. Just-in-time üretim isterseniz biz minimum stok tutar, siz bildirdikçe sevk ederiz. Tampon stok ile çalışmak isterseniz tesisimizde bir miktar bitmiş ürün stoğunu yönetebiliriz. Uzun dönemli sözleşmelerde stok rotasyon planı önceden kararlaştırılır.</p>
+      </details>
+      <details>
+        <summary>Kalite kontrol raporu paylaşıyor musunuz?</summary>
+        <p>Evet. Periyodik (haftalık veya aylık) PDF rapor: üretilen adet, hata oranı, hata tipleri, kabul/red kararları. Sözleşmenize göre frekans ve detay seviyesi ayarlanır.</p>
+      </details>
+    </div>
+  </section>
+
+  <CTASection
+    locale="tr"
+    title="Montaj projeniz için süreç değerlendirmesi"
+    description="BOM listenizi, ürün şartnamenizi veya örnek numuneyi gönderin, 1-3 iş günü içinde detaylı teklif hazırlayalım."
+  />
+</Layout>
+
+<style>
+  .hero {
+    padding-top: var(--s-7);
+    padding-bottom: var(--s-5);
+  }
+
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .section--cream {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .tldr { padding-top: 0; }
+
+  .tldr__box {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent);
+    padding: var(--s-4) var(--s-4);
+    border-radius: var(--r-card);
+    box-shadow: var(--sh-soft);
+  }
+
+  .tldr__label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--c-accent-dark);
+    margin: 0 0 var(--s-2);
+  }
+
+  .tldr__box p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .process__list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--s-4);
+  }
+
+  .process__list li {
+    background: var(--c-white);
+    padding: var(--s-4);
+    border-radius: var(--r-card);
+    border: 1px solid var(--c-border);
+    position: relative;
+  }
+
+  .process__num {
+    color: var(--c-accent-dark);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .process__list h3 {
+    font-size: 1.1rem;
+    margin: var(--s-2) 0 var(--s-2);
+  }
+
+  .process__list p {
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .value__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    align-items: center;
+  }
+
+  @media (min-width: 800px) {
+    .value__grid { grid-template-columns: 1.4fr 1fr; }
+  }
+
+  .value__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-2);
+  }
+
+  .value__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+
+  .value__stats li {
+    background: var(--c-cream);
+    padding: var(--s-3);
+    border-radius: var(--r-card);
+    text-align: center;
+    border: 1px solid var(--c-border);
+  }
+
+  .value__stats strong {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--c-primary);
+    font-weight: 800;
+  }
+
+  .value__stats span {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+  }
+
+  .muted { color: var(--c-text-muted); font-size: 0.95rem; }
+
+  .use-cases__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .use-cases__grid > div {
+    background: var(--c-cream);
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r-card);
+    border-left: 3px solid var(--c-accent);
+  }
+
+  .use-cases__grid strong {
+    display: block;
+    color: var(--c-primary);
+    margin-bottom: 4px;
+  }
+
+  .use-cases__grid span {
+    color: var(--c-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .numbered-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+
+  .numbered-list li {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+  }
+
+  .numbered-list span {
+    color: var(--c-accent-dark);
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    width: 1.5rem;
+  }
+
+  .numbered-list strong {
+    color: var(--c-primary);
+  }
+
+  .faq details {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    margin-bottom: var(--s-2);
+    overflow: hidden;
+  }
+
+  .faq summary {
+    padding: var(--s-3) var(--s-4);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--c-primary);
+    list-style: none;
+    position: relative;
+  }
+
+  .faq summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--s-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform var(--t);
+  }
+
+  .faq details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq details p {
+    padding: 0 var(--s-4) var(--s-4);
+    margin: 0;
+    color: var(--c-text-muted);
+  }
+</style>

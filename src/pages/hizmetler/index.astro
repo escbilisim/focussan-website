@@ -5,15 +5,15 @@ import CTASection from '../../components/CTASection.astro';
 
 <Layout
   title="Hizmetlerimiz · Focussan"
-  description="Focussan'ın iki ana hizmet kolu: 8 metreye kadar fason elektrostatik toz boya ve VESA standardı TV askı aparatı üretimi."
+  description="Focussan'ın üç ana hizmet kolu: 8 metreye kadar statik toz boya, VESA standardı TV askı aparatı üretimi ve fason montaj hattı."
   locale="tr"
 >
   <section class="hero section">
     <div class="container container--narrow">
       <p class="hero__eyebrow">HİZMETLER</p>
-      <h1>İki Ana İş Kolumuz</h1>
+      <h1>Üç Ana İş Kolumuz</h1>
       <p class="lead">
-        Aynı tesiste, aynı kalite standardıyla iki tamamlayıcı iş yürütüyoruz: endüstriyel fason toz boya ve kendi TV askı aparatı üretimimiz.
+        Aynı tesiste, aynı kalite standardıyla yürüyen tamamlayıcı üç iş kolu: endüstriyel statik toz boya, kendi VESA TV askı aparatı üretimimiz ve müşteri ürünleri için fason montaj hattı.
       </p>
     </div>
   </section>
@@ -21,11 +21,11 @@ import CTASection from '../../components/CTASection.astro';
   <section class="section">
     <div class="container">
       <div class="services-grid">
-        <a href="/hizmetler/fason-statik-toz-boya" class="service-card">
+        <a href="/hizmetler/statik-toz-boya" class="service-card">
           <p class="service-card__tag">HİZMET 1</p>
-          <h2>Fason Elektrostatik Toz Boya</h2>
+          <h2>Statik Toz Boya</h2>
           <p>
-            8 metreye kadar parça boyutunda fason toz boya. RAL paletinin tamamı, mat / parlak / yarı mat / dokulu finiş, ortalama 2-5 iş günü teslim. Otomotiv, profil, raf sistemi, elektrik panosu, mimari metalwork, tarım makinesi sektörlerine.
+            8 metreye kadar parça boyutunda elektrostatik toz kaplama. RAL paletinin tamamı, mat / parlak / yarı mat / dokulu finiş, ortalama 2-5 iş günü teslim. Otomotiv, profil, raf sistemi, elektrik panosu, mimari metalwork, tarım makinesi sektörlerine.
           </p>
           <ul>
             <li>8 m maksimum parça boyu</li>
@@ -47,6 +47,21 @@ import CTASection from '../../components/CTASection.astro';
             <li>VESA 75×75 ile 600×400 evrensel plaka</li>
             <li>Kablo yönetim kanalı standart</li>
             <li>B2B proje fiyatlandırması</li>
+          </ul>
+          <span class="service-card__action">Detaya git →</span>
+        </a>
+
+        <a href="/hizmetler/fason-montaj-hatti" class="service-card">
+          <p class="service-card__tag">HİZMET 3</p>
+          <h2>Fason Montaj Hattı</h2>
+          <p>
+            Toz boyadığımız parçaları, sizden gelen alt komponentlerle (vida, plastik aksam, kablo, etiket vb.) montaj hattımızda birleştiriyor, kalite kontrolden geçiriyor ve paketleyip teslime hazır gönderiyoruz. Tek tedarikçi, tek lojistik döngüsü.
+          </p>
+          <ul>
+            <li>Boya + montaj + paketleme tek çatıda</li>
+            <li>Just-in-time veya tampon stoklu üretim</li>
+            <li>Markalı veya nötr paketleme</li>
+            <li>Periyodik kalite kontrol raporu</li>
           </ul>
           <span class="service-card__action">Detaya git →</span>
         </a>
@@ -76,8 +91,11 @@ import CTASection from '../../components/CTASection.astro';
     grid-template-columns: 1fr;
     gap: var(--s-4);
   }
-  @media (min-width: 800px) {
-    .services-grid { grid-template-columns: 1fr 1fr; }
+  @media (min-width: 700px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   .service-card {

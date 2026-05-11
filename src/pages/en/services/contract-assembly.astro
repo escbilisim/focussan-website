@@ -1,0 +1,416 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CTASection from '../../../components/CTASection.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Contract Assembly and Packaging Line',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Focussan Metal Sanayi Ticaret A.Ş.',
+    url: 'https://focussan.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'DESB OSB Deliklikaya Mah. GünAlan Caddesi No: 23/1',
+      addressLocality: 'Arnavutköy',
+      addressRegion: 'İstanbul',
+      addressCountry: 'TR',
+    },
+    telephone: '+90 212 873 07 34',
+  },
+  areaServed: { '@type': 'Country', name: 'Turkey' },
+  description:
+    'Integrated contract assembly line combined with electrostatic powder coating. We assemble powder-coated parts with the additional components you supply, run quality control, and package the finished product. Single supplier, single logistics loop.',
+};
+---
+
+<Layout
+  title="Contract Assembly & Packaging Line · Coating + Assembly · Focussan"
+  description="Electrostatic powder coating + assembly + packaging under one roof. We combine the parts we coat with the components you supply, run quality control, and ship finished, packaged product."
+  locale="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">SERVICE</p>
+      <h1>Contract Assembly Line</h1>
+      <p class="lead">
+        We take the parts we powder coat for you, combine them with the additional components you supply, assemble them on our line, run quality control, package, and ship ready for delivery. One supplier, one logistics loop, one quality checkpoint.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tldr">
+    <div class="container container--narrow">
+      <div class="tldr__box">
+        <p class="tldr__label">At a glance</p>
+        <p>
+          <strong>Contract assembly</strong> means consolidating the steps required to reach a finished product (coating + assembly + packaging) under a single roof instead of splitting them across separate suppliers. At Focussan, a part that has completed surface preparation and electrostatic powder coating moves directly to our assembly line where it is combined with sub-components you supply (screws, plastic accessories, cables, labels, aluminium extrusions, etc.), passes visual and functional quality control, and is packaged with your branding or ours. Result: <strong>coated + assembled + packaged finished product</strong> ready to ship, all from one facility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <h2>Process Steps</h2>
+      <ol class="process__list">
+        <li>
+          <span class="process__num">01</span>
+          <h3>Goods Receipt + Inventory</h3>
+          <p>Metal parts to be coated and additional sub-components arrive. Count, damage check, link to work order.</p>
+        </li>
+        <li>
+          <span class="process__num">02</span>
+          <h3>Electrostatic Powder Coating</h3>
+          <p>In our own workshop: surface preparation → spray → cure → cool. Details: <a href="/en/services/powder-coating">Powder Coating page</a>.</p>
+        </li>
+        <li>
+          <span class="process__num">03</span>
+          <h3>Assembly Line</h3>
+          <p>Coated part moves straight to assembly. Screw torque, sequencing, adhesives / seals, cable routing — per your specification.</p>
+        </li>
+        <li>
+          <span class="process__num">04</span>
+          <h3>Quality Control</h3>
+          <p>Visual inspection (colour, surface, scratch) + functional test (movement, mount tightness, dimensional fit). Defects rolled back through the flow.</p>
+        </li>
+        <li>
+          <span class="process__num">05</span>
+          <h3>Labelling + Packaging</h3>
+          <p>Branded box or neutral kraft, printed label, barcode, user guide. With your visual identity or our standard.</p>
+        </li>
+        <li>
+          <span class="process__num">06</span>
+          <h3>Dispatch</h3>
+          <p>To your address, warehouse, or direct to your end customer. Pallet, carton, container — depending on order type.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--cream value">
+    <div class="container">
+      <div class="value__grid">
+        <div class="value__main">
+          <p class="value__eyebrow">WHY OUTSOURCE TO US</p>
+          <h2>Coating + Assembly Under One Roof</h2>
+          <p>
+            Splitting coating across one workshop and assembly across another means: extra freight, repacking, scratch risk in transit, two separate QC rounds, two supplier relationships to manage. Focussan offers an integrated flow on a single site.
+          </p>
+        </div>
+        <ul class="value__stats">
+          <li><strong>Single</strong><span>Logistics loop</span></li>
+          <li><strong>0</strong><span>Coating-to-assembly transit</span></li>
+          <li><strong>Single</strong><span>Quality checkpoint</span></li>
+          <li><strong>Single</strong><span>Invoice + supplier relationship</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section use-cases">
+    <div class="container">
+      <h2>Suitable Product Types</h2>
+      <p>Any product with a metal main body plus additional sub-components. Typical examples:</p>
+      <div class="use-cases__grid">
+        <div><strong>TV mounting brackets</strong><span>Galvanised steel body + screw set + wall plate + user guide (we manufacture our own VESA products on this line)</span></div>
+        <div><strong>Electrical enclosure cabinets</strong><span>Coated steel cabinet + internal DIN rails + hinge + label set</span></div>
+        <div><strong>Racking and storage systems</strong><span>Coated frame + connectors + foot screw set + assembly guide</span></div>
+        <div><strong>Furniture / décor hardware</strong><span>Metal frame + plastic accessories + wood detail + in-box assembly guide</span></div>
+        <div><strong>Automotive sub-assemblies</strong><span>Coated chassis component + fastener kit + label + barcode</span></div>
+        <div><strong>Construction hardware</strong><span>Railing cap, hinge, door handle and similar composite products</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream pricing">
+    <div class="container container--narrow">
+      <h2>Pricing Approach</h2>
+      <p>Assembly line pricing is not a fixed list — it varies with product complexity. Quotes factor in:</p>
+      <ul class="numbered-list">
+        <li><span>1.</span> <div><strong>Per-unit labour time</strong>: Minutes a product spends on the line.</div></li>
+        <li><span>2.</span> <div><strong>Component count + type</strong>: Screws, plastic clips, cables, electronic boards, mechanical parts, etc.</div></li>
+        <li><span>3.</span> <div><strong>QC depth</strong>: Visual only, functional test required, certification required?</div></li>
+        <li><span>4.</span> <div><strong>Packaging type</strong>: Neutral kraft → branded colour box → wooden pallet — meaningful cost difference.</div></li>
+        <li><span>5.</span> <div><strong>Production volume</strong>: 1,000 vs 50,000 units per month require different line planning. Unit cost drops with volume.</div></li>
+        <li><span>6.</span> <div><strong>Contract duration</strong>: One-off projects and 12-month framework contracts price differently. Long-term commitments receive a contract discount.</div></li>
+      </ul>
+      <p class="muted">Send your product specification, BOM (Bill of Materials) or a sample, and we will return a detailed quote within 1-3 business days.</p>
+    </div>
+  </section>
+
+  <section class="section how-it-works">
+    <div class="container container--narrow">
+      <h2>How a Project Starts</h2>
+      <ul class="numbered-list">
+        <li><span>A.</span> <div><strong>Product evaluation</strong>: You send specification, BOM, target volume, packaging requirements.</div></li>
+        <li><span>B.</span> <div><strong>Preliminary quote + sample run</strong>: We share process and pricing framework. Optionally we produce a pilot batch for your approval.</div></li>
+        <li><span>C.</span> <div><strong>Contract + component supply plan</strong>: We define the inbound flow for your components (just-in-time or stock).</div></li>
+        <li><span>D.</span> <div><strong>Serial production start</strong>: The line runs, periodic QC reports are shared.</div></li>
+        <li><span>E.</span> <div><strong>Dispatch + invoicing</strong>: Packaged product ships at the agreed cadence, electronic invoices issued.</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="container container--narrow">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Is there a minimum order quantity?</summary>
+        <p>A baseline volume is required to amortise line setup. Project minimums are agreed individually; small runs (1-100) can be handled as one-off arrangements, while serial production typically becomes economical from 500+ units.</p>
+      </details>
+      <details>
+        <summary>Can Focussan source the additional components?</summary>
+        <p>Depends on contract type. Off-the-shelf items (screws, nuts, basic plastic parts) we can source. Custom / OEM components (your branded labels, calibrated electronics) you supply.</p>
+      </details>
+      <details>
+        <summary>Do you package under our brand?</summary>
+        <p>Yes. We use your box design, label, user guide, barcode, leaflet. Provide design files and print specification; we can also manage the print sourcing.</p>
+      </details>
+      <details>
+        <summary>How many SKUs can you run on one product?</summary>
+        <p>The line accommodates colour, size, package configuration variants. A typical TV-mount family runs as 4 models × 2 colours × 2 packages = 16 SKUs comfortably. Higher SKU counts add line changeover time as a separate cost item.</p>
+      </details>
+      <details>
+        <summary>Do you manage stock (warehousing, dispatch timing)?</summary>
+        <p>Depends on agreement. Just-in-time production means we hold minimal stock and ship on call. With buffer stock, we can hold a portion of finished goods at our facility. Long-term contracts define rotation rules in advance.</p>
+      </details>
+      <details>
+        <summary>Do you provide quality control reports?</summary>
+        <p>Yes. Periodic (weekly or monthly) PDF report: units produced, defect rate, defect types, accept / reject decisions. Frequency and detail level are set in the contract.</p>
+      </details>
+    </div>
+  </section>
+
+  <CTASection
+    locale="en"
+    title="Assess your assembly project"
+    description="Send your BOM, product specification or a sample. We return a detailed quote within 1-3 business days."
+  />
+</Layout>
+
+<style>
+  .hero {
+    padding-top: var(--s-7);
+    padding-bottom: var(--s-5);
+  }
+
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .section--cream {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .tldr { padding-top: 0; }
+
+  .tldr__box {
+    background: var(--c-white);
+    border-left: 4px solid var(--c-accent);
+    padding: var(--s-4) var(--s-4);
+    border-radius: var(--r-card);
+    box-shadow: var(--sh-soft);
+  }
+
+  .tldr__label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--c-accent-dark);
+    margin: 0 0 var(--s-2);
+  }
+
+  .tldr__box p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .process__list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--s-4);
+  }
+
+  .process__list li {
+    background: var(--c-white);
+    padding: var(--s-4);
+    border-radius: var(--r-card);
+    border: 1px solid var(--c-border);
+    position: relative;
+  }
+
+  .process__num {
+    color: var(--c-accent-dark);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .process__list h3 {
+    font-size: 1.1rem;
+    margin: var(--s-2) 0 var(--s-2);
+  }
+
+  .process__list p {
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .value__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    align-items: center;
+  }
+
+  @media (min-width: 800px) {
+    .value__grid { grid-template-columns: 1.4fr 1fr; }
+  }
+
+  .value__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-2);
+  }
+
+  .value__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+
+  .value__stats li {
+    background: var(--c-cream);
+    padding: var(--s-3);
+    border-radius: var(--r-card);
+    text-align: center;
+    border: 1px solid var(--c-border);
+  }
+
+  .value__stats strong {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--c-primary);
+    font-weight: 800;
+  }
+
+  .value__stats span {
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+  }
+
+  .muted { color: var(--c-text-muted); font-size: 0.95rem; }
+
+  .use-cases__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .use-cases__grid > div {
+    background: var(--c-cream);
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r-card);
+    border-left: 3px solid var(--c-accent);
+  }
+
+  .use-cases__grid strong {
+    display: block;
+    color: var(--c-primary);
+    margin-bottom: 4px;
+  }
+
+  .use-cases__grid span {
+    color: var(--c-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .numbered-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-4) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+
+  .numbered-list li {
+    display: flex;
+    gap: var(--s-3);
+    align-items: flex-start;
+  }
+
+  .numbered-list span {
+    color: var(--c-accent-dark);
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    width: 1.5rem;
+  }
+
+  .numbered-list strong {
+    color: var(--c-primary);
+  }
+
+  .faq details {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    margin-bottom: var(--s-2);
+    overflow: hidden;
+  }
+
+  .faq summary {
+    padding: var(--s-3) var(--s-4);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--c-primary);
+    list-style: none;
+    position: relative;
+  }
+
+  .faq summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--s-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform var(--t);
+  }
+
+  .faq details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq details p {
+    padding: 0 var(--s-4) var(--s-4);
+    margin: 0;
+    color: var(--c-text-muted);
+  }
+</style>

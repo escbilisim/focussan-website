@@ -5,9 +5,9 @@ import { CONTACT } from '../data/site';
 
 const services = [
   {
-    href: '/hizmetler/fason-statik-toz-boya',
+    href: '/hizmetler/statik-toz-boya',
     tag: 'HİZMET 1',
-    title: 'Fason Elektrostatik Toz Boya',
+    title: 'Statik Toz Boya',
     body: '8 metreye kadar parça, RAL paletinin tamamı, 4 finiş seçeneği ve 2-5 iş günü teslim. Otomotiv, profil, raf sistemi, elektrik panosu ve mimari metal sektörlerine.',
   },
   {
@@ -15,6 +15,12 @@ const services = [
     tag: 'HİZMET 2',
     title: 'VESA TV Askı Aparatı',
     body: 'Galvaniz çelik gövde, matt siyah toz boya, evrensel VESA uyumu. 4 ürün ailesi, kablo yönetim kanalı standart. Tekli satış, toptan ve proje teklifi.',
+  },
+  {
+    href: '/hizmetler/fason-montaj-hatti',
+    tag: 'HİZMET 3',
+    title: 'Fason Montaj Hattı',
+    body: 'Boyadığımız parçaları sizin gönderdiğiniz komponentlerle birleştirip, kalite kontrolden geçirip paketliyoruz. Tek tedarikçi, tek lojistik döngüsü, tek kalite kontrol noktası.',
   },
 ];
 
@@ -104,8 +110,8 @@ const miniFaqs = [
     <div class="container">
       <div class="home-blockhead">
         <p class="home-blockhead__eyebrow">HİZMETLERİMİZ</p>
-        <h2>İki ana iş kolumuz</h2>
-        <p class="home-blockhead__lead">Aynı tesiste, aynı kalite standardıyla yürüyen iki tamamlayıcı iş.</p>
+        <h2>Üç ana iş kolumuz</h2>
+        <p class="home-blockhead__lead">Aynı tesiste, aynı kalite standardıyla yürüyen tamamlayıcı üç iş kolu: kaplama, kendi ürünümüz, sözleşmeli montaj.</p>
       </div>
 
       <div class="home-services">
@@ -349,15 +355,20 @@ const miniFaqs = [
     color: var(--c-white);
   }
 
-  /* ===== Services grid (2 cards side-by-side from 800px) ===== */
+  /* ===== Services grid (3 cards responsive: 1 / 2 / 3 col) ===== */
   .home-services {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--s-4);
   }
-  @media (min-width: 800px) {
+  @media (min-width: 700px) {
     .home-services {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1000px) {
+    .home-services {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   .home-service-card {

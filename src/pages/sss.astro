@@ -73,6 +73,27 @@ const faqs = [
       },
     ],
   },
+  {
+    section: 'Fason Montaj Hattı',
+    items: [
+      {
+        q: 'Fason montaj hattı nedir, fason toz boyadan farkı ne?',
+        a: 'Statik toz boya sadece kaplama işlemidir, parça boyanır ve size iade edilir. Fason montaj hattı ise boyadığımız parçayı sizden gelen alt komponentlerle birleştirip, kalite kontrolden geçirip paketleyerek bitmiş ürün olarak sevk eder. Tek tedarikçi, tek lojistik döngüsü.',
+      },
+      {
+        q: 'Minimum sipariş adedi var mı?',
+        a: 'Hat kurulumu için belirli bir taban hacim gerekir. Tipik olarak proje bazlı minimum kararlaştırılır; çok küçük adetler (1-100) için tek seferlik özel düzenleme yapılabilir, seri üretim hedefi varsa 500+ adet ekonomik olur.',
+      },
+      {
+        q: 'Komponentleri Focussan tedarik edebilir mi?',
+        a: 'Sözleşmeye göre değişir. Standart vida, somun, basit plastik aksam gibi raf malzemelerini bizim tedarik etmemiz mümkün. Özel veya OEM komponentler (kendi marka etiketleri, kalibre edilmiş elektronik aksam) için siz tedarik edersiniz.',
+      },
+      {
+        q: 'Kendi markamızla paketleme yapıyor musunuz?',
+        a: 'Evet. Sizin tasarımınızdaki kutu, etiket, kullanım kılavuzu, barkod ve broşür kullanırız. Tasarım dosyalarını siz iletirseniz, gerekirse baskı tedariğini de yönetebiliriz.',
+      },
+    ],
+  },
 ];
 
 const faqSchema = {
@@ -90,7 +111,7 @@ const faqSchema = {
 
 <Layout
   title="Sıkça Sorulan Sorular · Focussan"
-  description="Fason elektrostatik toz boya ve VESA TV askı aparatı hakkında en çok sorulan sorular: kapasite, RAL renkler, teslim süresi, montaj, uyumluluk."
+  description="Statik toz boya, VESA TV askı aparatı ve fason montaj hattı hizmetlerimiz hakkında en çok sorulan sorular: kapasite, RAL renkler, teslim süresi, montaj, paketleme."
   locale="tr"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -100,7 +121,7 @@ const faqSchema = {
       <p class="hero__eyebrow">SSS</p>
       <h1>Sıkça Sorulan Sorular</h1>
       <p class="lead">
-        Fason toz boya ve TV askı aparatı hakkında müşterilerimizin en sık sorduğu sorular ve net cevapları.
+        Statik toz boya, VESA TV askı aparatı ve fason montaj hattı hizmetlerimiz hakkında müşterilerimizin en sık sorduğu sorular ve net cevapları.
       </p>
     </div>
   </section>

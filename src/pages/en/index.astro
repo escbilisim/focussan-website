@@ -7,14 +7,20 @@ const services = [
   {
     href: '/en/services/powder-coating',
     tag: 'SERVICE 1',
-    title: 'Subcontract Electrostatic Powder Coating',
-    body: 'Parts up to 8 m, the full RAL palette, four finish options and 2-5 business day turnaround. Automotive, profile, racking, electrical enclosures and architectural metal.',
+    title: 'Electrostatic Powder Coating',
+    body: 'Parts up to 8 m, full RAL palette, four finish options and 2-5 business day turnaround. Automotive, profile, racking, electrical enclosures and architectural metal.',
   },
   {
     href: '/en/services/tv-mounts',
     tag: 'SERVICE 2',
     title: 'VESA TV Mounting Brackets',
     body: 'Galvanised steel body, matte black powder coat, universal VESA compatibility. Four product families with cable management standard. Single-unit, wholesale and project quotes.',
+  },
+  {
+    href: '/en/services/contract-assembly',
+    tag: 'SERVICE 3',
+    title: 'Contract Assembly Line',
+    body: 'We combine the parts we coat with the components you supply, run quality control, and package the finished product. Single supplier, single logistics loop, single QC checkpoint.',
   },
 ];
 
@@ -104,8 +110,8 @@ const miniFaqs = [
     <div class="container">
       <div class="home-blockhead">
         <p class="home-blockhead__eyebrow">OUR SERVICES</p>
-        <h2>Two complementary lines of business</h2>
-        <p class="home-blockhead__lead">Same facility, same quality standard, two work streams running side by side.</p>
+        <h2>Three complementary lines of business</h2>
+        <p class="home-blockhead__lead">Same facility, same quality standard, three lines running side by side: coating, our own product, contract assembly.</p>
       </div>
 
       <div class="home-services">
@@ -349,15 +355,20 @@ const miniFaqs = [
     color: var(--c-white);
   }
 
-  /* ===== Services grid ===== */
+  /* ===== Services grid (3 cards responsive: 1 / 2 / 3 col) ===== */
   .home-services {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--s-4);
   }
-  @media (min-width: 800px) {
+  @media (min-width: 700px) {
     .home-services {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1000px) {
+    .home-services {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   .home-service-card {

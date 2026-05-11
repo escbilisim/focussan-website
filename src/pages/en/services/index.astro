@@ -5,15 +5,15 @@ import CTASection from '../../../components/CTASection.astro';
 
 <Layout
   title="Services · Focussan"
-  description="Two main service lines: industrial subcontract powder coating up to 8 metres, and VESA-standard TV mounting bracket manufacturing."
+  description="Three main service lines: industrial powder coating up to 8 metres, VESA-standard TV mounting bracket manufacturing, and contract assembly + packaging."
   locale="en"
 >
   <section class="hero section">
     <div class="container container--narrow">
       <p class="hero__eyebrow">SERVICES</p>
-      <h1>Two Main Lines of Business</h1>
+      <h1>Three Main Lines of Business</h1>
       <p class="lead">
-        Same facility, same quality standard, two complementary operations: industrial subcontract powder coating and our own TV mounting bracket production.
+        Same facility, same quality standard, three complementary operations running side by side: industrial powder coating, our own TV mounting bracket production, and contract assembly for customer products.
       </p>
     </div>
   </section>
@@ -25,7 +25,7 @@ import CTASection from '../../../components/CTASection.astro';
           <p class="service-card__tag">SERVICE 1</p>
           <h2>Industrial Powder Coating</h2>
           <p>
-            Subcontract electrostatic powder coating up to 8 metres. Full RAL palette, matte / gloss / semi-matte / textured finishes, 2-5 business day average turnaround. For automotive, profile, racking, electrical, architectural metalwork and agricultural equipment sectors.
+            Electrostatic powder coating up to 8 metres. Full RAL palette, matte / gloss / semi-matte / textured finishes, 2-5 business day average turnaround. For automotive, profile, racking, electrical, architectural metalwork and agricultural equipment sectors.
           </p>
           <ul>
             <li>Up to 8 m part length</li>
@@ -50,6 +50,21 @@ import CTASection from '../../../components/CTASection.astro';
           </ul>
           <span class="service-card__action">View details →</span>
         </a>
+
+        <a href="/en/services/contract-assembly" class="service-card">
+          <p class="service-card__tag">SERVICE 3</p>
+          <h2>Contract Assembly Line</h2>
+          <p>
+            We combine the parts we powder coat with components you supply (screws, plastic, cables, labels, etc.) on our assembly line, run quality control, and package the finished product ready to ship. Single supplier, single logistics loop.
+          </p>
+          <ul>
+            <li>Coating + assembly + packaging under one roof</li>
+            <li>Just-in-time or buffered production</li>
+            <li>Branded or neutral packaging</li>
+            <li>Periodic QC reporting</li>
+          </ul>
+          <span class="service-card__action">View details →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -65,7 +80,8 @@ import CTASection from '../../../components/CTASection.astro';
   .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
   .hero__eyebrow { color: var(--c-accent-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-3); }
   .services-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-4); }
-  @media (min-width: 800px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 700px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
   .service-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-card); padding: var(--s-5); text-decoration: none; color: var(--c-text); display: flex; flex-direction: column; gap: var(--s-3); transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast); }
   .service-card:hover { border-color: var(--c-accent); box-shadow: var(--sh-mid); transform: translateY(-2px); }
   .service-card__tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; color: var(--c-accent-dark); margin: 0; text-transform: uppercase; }
