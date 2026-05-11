@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const faqs = [
+  {
+    section: 'Powder Coating',
+    items: [
+      { q: 'What is electrostatic powder coating?', a: 'A process where negatively charged paint particles are electrostatically sprayed onto a grounded metal surface, then cured at approximately 180-200 °C. Solvent-free and environmentally friendly.' },
+      { q: 'Which metals can be coated?', a: 'Steel, aluminium, stainless, galvanised and cast iron — all conductive metals. Plastic, wood and MDF are not suitable.' },
+      { q: 'What is your maximum part length?', a: 'Up to 8 metres. Most subcontract shops cap at 3-4 m, so we can serve large industrial profiles and racking systems.' },
+      { q: "What's your turnaround time?", a: 'Standard work averages 2-5 business days. Time varies with quantity, colour changes and surface prep complexity; we confirm exact timing with the quote.' },
+      { q: 'Which RAL colours are available?', a: 'Full RAL Classic palette (213 standard colours), RAL Design with 1,625 colours, plus NCS and custom matching on request.' },
+      { q: 'Do you offer matte / gloss / textured finishes?', a: 'Yes — matte, gloss, semi-matte, textured and metallic / pearl (RAL Effect) finishes are all available.' },
+      { q: 'How is pricing determined?', a: 'Not a fixed price list. We evaluate quantity, surface area, coating type (epoxy / polyester / polyurethane), colour change count and surface prep difficulty. Send a part drawing or sample photo for a precise quote.' },
+      { q: 'Suitable for outdoor use?', a: 'Yes — polyester or polyurethane powder gives 10+ years of UV-stable outdoor durability for architectural profiles, agricultural machinery and rooftop elements.' },
+      { q: 'Is it environmentally friendly?', a: 'Yes. Solvent-free with zero VOC emissions. Unused powder is 95%+ recoverable, generating significantly less waste than liquid paint.' },
+    ],
+  },
+  {
+    section: 'TV Mounting Brackets',
+    items: [
+      { q: 'Which VESA standards do you support?', a: 'A universal plate covering all VESA values from 75×75 to 600×400. Compatible with most TV brands and 24-100 inch screens.' },
+      { q: 'Which TV brands are compatible?', a: 'Samsung, LG, Sony, Vestel, Arçelik, Beko, Philips, Panasonic, Hisense, TCL and any VESA-compliant brand. The deciding factor is the VESA value, not the brand.' },
+      { q: "How do I find my TV's VESA value?", a: 'Check the user manual or back panel sticker. Also listed on the manufacturer\'s website by model. Usually written as "VESA 200×200 mm".' },
+      { q: 'What materials are the brackets made of?', a: 'Galvanised steel body finished with matte black electrostatic powder coating in our own facility. All models include a cable management channel.' },
+      { q: 'Is the installation kit included?', a: 'Yes. Screws and instructions ship in the box. A standard drill and level are enough for home installation.' },
+      { q: 'How does wholesale or project ordering work?', a: 'We offer project-based pricing for AV integrators, hotel chains, retail groups and distributors. Reach out with the type and quantity to receive a quote.' },
+    ],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.flatMap((s) => s.items).map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+
+<Layout
+  title="FAQ · Focus SAN"
+  description="Frequently asked questions about industrial powder coating and VESA TV mounting brackets: capacity, RAL colours, turnaround, installation, compatibility."
+  locale="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">FAQ</p>
+      <h1>Frequently Asked Questions</h1>
+      <p class="lead">
+        The most common questions our customers ask about subcontract powder coating and TV mounting brackets, with concise answers.
+      </p>
+    </div>
+  </section>
+
+  {faqs.map((section) => (
+    <section class="section faq-section">
+      <div class="container container--narrow">
+        <h2>{section.section}</h2>
+        {section.items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <CTASection
+    locale="en"
+    title="Question not answered?"
+    description="Reach us directly via WhatsApp or phone."
+  />
+</Layout>
+
+<style>
+  .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
+  .hero__eyebrow { color: var(--c-accent-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-3); }
+  .faq-section { padding: var(--s-5) 0; }
+  .faq-section h2 { margin-bottom: var(--s-4); padding-bottom: var(--s-2); border-bottom: 2px solid var(--c-accent); display: inline-block; }
+  .faq-section details { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-card); margin-bottom: var(--s-2); }
+  .faq-section summary { padding: var(--s-3) var(--s-4); cursor: pointer; font-weight: 600; color: var(--c-primary); list-style: none; position: relative; }
+  .faq-section summary::after { content: '+'; position: absolute; right: var(--s-4); top: 50%; transform: translateY(-50%); color: var(--c-accent); font-size: 1.5rem; line-height: 1; transition: transform var(--t); }
+  .faq-section details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq-section details p { padding: 0 var(--s-4) var(--s-4); margin: 0; color: var(--c-text-muted); line-height: 1.7; }
+</style>

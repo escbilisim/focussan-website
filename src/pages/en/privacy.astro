@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const lastUpdated = '2026-05-11';
+---
+
+<Layout
+  title="Privacy and GDPR Notice · Focus SAN"
+  description="Focus SAN privacy notice covering processing of personal data under GDPR and Turkey's KVKK Law."
+  locale="en"
+>
+  <article class="legal section">
+    <div class="container container--narrow">
+      <p class="legal__eyebrow">LEGAL</p>
+      <h1>Privacy and GDPR Notice</h1>
+      <p class="legal__updated">Last updated: {lastUpdated}</p>
+
+      <div class="legal__notice">
+        <p><strong>Note:</strong> This is a baseline privacy notice for Focus SAN. We recommend independent legal review for complete compliance with all applicable obligations.</p>
+      </div>
+
+      <h2>1. Data Controller</h2>
+      <p>
+        This notice is provided by <strong>Focussan Metal Sanayi Ticaret A.Ş.</strong> ("Focus SAN" or "the Company") to inform data subjects under the EU <strong>General Data Protection Regulation</strong> (GDPR) and Turkey's <strong>Personal Data Protection Law No. 6698</strong> (KVKK), where applicable.
+      </p>
+
+      <h2>2. Categories of Personal Data Processed</h2>
+      <ul>
+        <li><strong>Identity:</strong> Name, surname, title</li>
+        <li><strong>Contact:</strong> Email, phone, company name, address</li>
+        <li><strong>Inquiry content:</strong> Contact form / WhatsApp message contents, technical files sent</li>
+        <li><strong>Technical data:</strong> IP address (in server logs, limited retention)</li>
+      </ul>
+
+      <h2>3. Purposes of Processing</h2>
+      <ul>
+        <li>Responding to inquiries and quote requests</li>
+        <li>Performing contractual and financial obligations</li>
+        <li>Meeting statutory record-keeping obligations</li>
+        <li>Site security (limited technical logs)</li>
+      </ul>
+
+      <h2>4. Lawful Basis</h2>
+      <p>Personal data is processed based on the following grounds:</p>
+      <ul>
+        <li>Data subject's <strong>explicit consent</strong> (contact form consent checkbox)</li>
+        <li>Necessity for the conclusion or performance of a contract</li>
+        <li>Compliance with legal obligations of the controller</li>
+        <li>Legitimate interest (form spam protection, security logs)</li>
+      </ul>
+
+      <h2>5. Data Transfers and Third Parties</h2>
+      <p>Personal data may be shared with the following trusted processors only as strictly necessary to deliver the service:</p>
+      <ul>
+        <li><strong>Cloudflare, Inc.</strong> — site hosting and traffic protection (GDPR DPA in place)</li>
+        <li><strong>Resend</strong> — contact form mail delivery (EU region preferred)</li>
+        <li><strong>Google Workspace</strong> — corporate email (EU data centre)</li>
+      </ul>
+      <p>Apart from legally required disclosures, no data is shared with third parties; we do not sell or rent personal data.</p>
+
+      <h2>6. Retention Period</h2>
+      <p>
+        Inquiry data is kept for a reasonable period (typically 1-3 years) after response, then deleted or anonymised. Data subject to statutory retention (e.g. invoicing records) is kept for the period required by law.
+      </p>
+
+      <h2>7. Data Subject Rights</h2>
+      <p>Under GDPR Articles 15-22 and KVKK Article 11 you have the following rights:</p>
+      <ul>
+        <li>Right of access — to know whether your data is processed and request information</li>
+        <li>Right to learn the purpose and recipients</li>
+        <li>Right to know domestic / cross-border transfers</li>
+        <li>Right to rectification of inaccurate or incomplete data</li>
+        <li>Right to erasure (right to be forgotten)</li>
+        <li>Right to object to processing</li>
+        <li>Right to object to adverse outcomes from automated decisions</li>
+        <li>(GDPR) Right to data portability</li>
+      </ul>
+
+      <h2>8. How to Exercise Your Rights</h2>
+      <p>
+        Send a written request to <a href="mailto:muhasebe@focussan.com">muhasebe@focussan.com</a>. We will respond within 30 days at the latest.
+      </p>
+
+      <h2>9. Cookies</h2>
+      <p>
+        We use only essential technical cookies. No marketing or tracking cookies. Details: <a href="/en/cookies">Cookie Policy</a>.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal { padding-top: var(--s-7); padding-bottom: var(--s-7); }
+  .legal__eyebrow { color: var(--c-accent-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-3); }
+  .legal__updated { color: var(--c-text-muted); font-size: 0.9rem; margin: 0 0 var(--s-4); }
+  .legal__notice { background: var(--c-cream); border-left: 3px solid var(--c-accent); padding: var(--s-3) var(--s-4); border-radius: var(--r-card); margin-bottom: var(--s-5); font-size: 0.95rem; }
+  .legal__notice p { margin: 0; }
+  .legal h2 { margin-top: var(--s-5); font-size: 1.25rem; }
+  .legal ul { padding-left: var(--s-4); margin-bottom: var(--s-3); }
+  .legal li { margin-bottom: var(--s-2); }
+</style>

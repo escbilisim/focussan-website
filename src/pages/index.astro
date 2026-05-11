@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT } from '../data/site';
+---
+
+<Layout
+  title="Focus SAN — Endüstriyel Toz Boya ve Metal Çözümleri"
+  description="İstanbul Arnavutköy DESB OSB merkezli, 8 metreye kadar fason elektrostatik toz boya ve VESA standardında TV askı aparatı üreten yerli üretici."
+  locale="tr"
+>
+  <section class="hero section">
+    <div class="container container--narrow text-center">
+      <p class="hero__eyebrow">FOCUS SAN</p>
+      <h1>Endüstriyel Toz Boya ve Metal Çözümleri</h1>
+      <p class="lead">
+        İstanbul Arnavutköy DESB OSB merkezli yerli üretici. 8 metreye kadar parça boyutunda fason elektrostatik toz boya ve VESA uyumlu TV askı aparatı üretimi.
+      </p>
+      <div class="hero__cta">
+        <a href="/iletisim" class="btn btn--primary">Teklif Al</a>
+        <a href={CONTACT.whatsappHref} class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section trust">
+    <div class="container">
+      <ul class="trust__grid">
+        <li><strong>8 m</strong><span>Maksimum parça boyu</span></li>
+        <li><strong>RAL</strong><span>Tam palet erişimi</span></li>
+        <li><strong>2-5 gün</strong><span>Ortalama teslim süresi</span></li>
+        <li><strong>VESA</strong><span>Standart uyumlu TV askı</span></li>
+        <li><strong>DESB OSB</strong><span>İstanbul Arnavutköy</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container container--narrow text-center">
+      <h2>Site yapım aşamasında</h2>
+      <p>Bu, yeni Focus SAN web sitesinin geliştirme önizlemesidir. Sayfa içerikleri sırayla tamamlanacaktır.</p>
+      <p>
+        <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a>
+        &nbsp;·&nbsp;
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding-top: var(--s-8);
+    padding-bottom: var(--s-7);
+  }
+
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: var(--s-3);
+    justify-content: center;
+    margin-top: var(--s-4);
+    flex-wrap: wrap;
+  }
+
+  .trust {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    padding: var(--s-5) 0;
+  }
+
+  .trust__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--s-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .trust__grid li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .trust__grid strong {
+    font-size: 1.5rem;
+    color: var(--c-primary);
+    font-weight: 800;
+  }
+
+  .trust__grid span {
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+  }
+</style>

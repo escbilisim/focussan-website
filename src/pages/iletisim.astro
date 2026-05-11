@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT } from '../data/site';
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://focussan.com/#localbusiness',
+  name: 'Focussan Metal Sanayi Ticaret A.Ş.',
+  alternateName: 'Focus SAN',
+  url: 'https://focussan.com',
+  logo: 'https://focussan.com/logo.png',
+  image: 'https://focussan.com/logo.png',
+  telephone: '+90 212 873 07 34',
+  email: 'muhasebe@focussan.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'DESB OSB Deliklikaya Mah. GünAlan Caddesi No: 23/1',
+    addressLocality: 'Arnavutköy',
+    addressRegion: 'İstanbul',
+    addressCountry: 'TR',
+  },
+  areaServed: { '@type': 'Country', name: 'Türkiye' },
+};
+---
+
+<Layout
+  title="İletişim · Focus SAN"
+  description="Focus SAN ile iletişim: Telefon 0 212 873 07 34, WhatsApp +90 538 684 7373, e-posta muhasebe@focussan.com. DESB OSB Arnavutköy / İstanbul."
+  locale="tr"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">İLETİŞİM</p>
+      <h1>Bize Ulaşın</h1>
+      <p class="lead">
+        Toz boya işiniz, TV askı talebiniz veya proje teklifiniz için aşağıdaki kanallardan herhangi birinden ulaşabilirsiniz. Genellikle aynı iş günü içinde dönüş yapıyoruz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <a href={CONTACT.whatsappHref} class="contact-card contact-card--accent" target="_blank" rel="noopener">
+          <p class="contact-card__label">EN HIZLI</p>
+          <h3>WhatsApp</h3>
+          <p>{CONTACT.whatsapp}</p>
+          <span class="contact-card__action">Mesaj gönder →</span>
+        </a>
+
+        <a href={CONTACT.phoneHref} class="contact-card">
+          <p class="contact-card__label">TELEFON</p>
+          <h3>{CONTACT.phone}</h3>
+          <p>Hafta içi mesai saatlerinde</p>
+          <span class="contact-card__action">Ara →</span>
+        </a>
+
+        <a href={`mailto:${CONTACT.email}`} class="contact-card">
+          <p class="contact-card__label">E-POSTA</p>
+          <h3>{CONTACT.email}</h3>
+          <p>Detaylı talep, teknik şartname, fatura</p>
+          <span class="contact-card__action">Mesaj yaz →</span>
+        </a>
+
+        <div class="contact-card contact-card--info">
+          <p class="contact-card__label">ADRES</p>
+          <h3>DESB OSB · Arnavutköy</h3>
+          <p>
+            {CONTACT.address.line1}<br />
+            {CONTACT.address.line2}<br />
+            {CONTACT.address.district}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream form-placeholder">
+    <div class="container container--narrow text-center">
+      <h2>Online Teklif Formu</h2>
+      <p class="lead">
+        Form altyapımız son aşamada. Şimdilik en hızlı dönüş için <a href={CONTACT.whatsappHref} target="_blank" rel="noopener">WhatsApp</a> üzerinden parça resmi veya teknik şartname gönderebilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--dark hours">
+    <div class="container container--narrow text-center">
+      <h2>Çalışma Saatleri</h2>
+      <p>Pazartesi - Cumartesi · Mesai saatleri içinde</p>
+      <p class="muted-light">Acil sevkiyat ve proje teklifleri için WhatsApp 7/24 mesaj kabul eder, ilk fırsatta dönüş yapılır.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+  }
+  @media (min-width: 700px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .contact-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-4);
+    text-decoration: none;
+    color: var(--c-text);
+    transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+  .contact-card:hover {
+    border-color: var(--c-accent);
+    box-shadow: var(--sh-mid);
+    transform: translateY(-2px);
+  }
+  .contact-card--info {
+    cursor: default;
+  }
+  .contact-card--info:hover {
+    transform: none;
+    border-color: var(--c-border);
+    box-shadow: none;
+  }
+  .contact-card__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--c-accent-dark);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .contact-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .contact-card p {
+    margin: 0;
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-card__action {
+    margin-top: auto;
+    color: var(--c-accent-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: var(--s-2);
+  }
+
+  /* Accent (dark) variant — must come AFTER base rules to win on equal specificity */
+  .contact-card--accent {
+    background: var(--c-primary);
+    color: var(--c-white);
+    border-color: var(--c-primary);
+  }
+  .contact-card--accent h3,
+  .contact-card--accent p {
+    color: var(--c-white);
+  }
+  .contact-card--accent .contact-card__label {
+    color: var(--c-accent-light);
+  }
+  .contact-card--accent .contact-card__action {
+    color: var(--c-accent-light);
+  }
+  .contact-card--accent:hover {
+    background: var(--c-primary-mid);
+    border-color: var(--c-accent);
+  }
+
+  .section--cream {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .muted-light {
+    color: var(--c-text-light-muted) !important;
+    font-size: 0.95rem;
+  }
+</style>

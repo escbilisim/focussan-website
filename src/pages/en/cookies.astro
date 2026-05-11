@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const lastUpdated = '2026-05-11';
+---
+
+<Layout
+  title="Cookie Policy · Focus SAN"
+  description="Cookies used on the Focus SAN website. Essential technical cookies only — no marketing or tracking cookies."
+  locale="en"
+>
+  <article class="legal section">
+    <div class="container container--narrow">
+      <p class="legal__eyebrow">LEGAL</p>
+      <h1>Cookie Policy</h1>
+      <p class="legal__updated">Last updated: {lastUpdated}</p>
+
+      <h2>Summary</h2>
+      <p>
+        focussan.com uses <strong>essential technical cookies only</strong>. <strong>There are no marketing, advertising or tracking cookies.</strong> For this reason we do not show a cookie banner; this is consistent with KVKK and the GDPR / ePrivacy framework.
+      </p>
+
+      <h2>Cookies We Use</h2>
+      <table class="cookies-table">
+        <thead>
+          <tr><th>Cookie</th><th>Purpose</th><th>Duration</th><th>Type</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>__cf_bm</code></td><td>Cloudflare bot protection (essential security)</td><td>30 min</td><td>Essential</td></tr>
+          <tr><td><code>cf_clearance</code></td><td>Cloudflare session cookie set after passing challenges</td><td>1 year</td><td>Essential</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Analytics (Cookieless)</h2>
+      <p>
+        We use <strong>Cloudflare Web Analytics</strong> to understand traffic patterns. This solution <strong>uses no cookies</strong>, does not store IP addresses as personal data, and does not perform fingerprinting. It is compliant with KVKK and GDPR.
+      </p>
+
+      <h2>Third-Party Cookies</h2>
+      <p>
+        We do not use third-party advertising or social media cookies. The site does not embed YouTube or Facebook content. WhatsApp links set no cookies until the user clicks them.
+      </p>
+
+      <h2>Cookie Preferences</h2>
+      <p>
+        You can delete or block all cookies via your browser; however, disabling essential security cookies may prompt the site to occasionally request additional bot verification.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For questions about this policy, write to <a href="mailto:muhasebe@focussan.com">muhasebe@focussan.com</a>. For your data subject rights see: <a href="/en/privacy">Privacy and GDPR Notice</a>.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal { padding-top: var(--s-7); padding-bottom: var(--s-7); }
+  .legal__eyebrow { color: var(--c-accent-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-3); }
+  .legal__updated { color: var(--c-text-muted); font-size: 0.9rem; margin: 0 0 var(--s-4); }
+  .legal h2 { margin-top: var(--s-5); font-size: 1.25rem; }
+  .cookies-table { width: 100%; border-collapse: collapse; margin: var(--s-3) 0; font-size: 0.9rem; background: var(--c-white); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--sh-soft); }
+  .cookies-table th, .cookies-table td { padding: var(--s-2) var(--s-3); text-align: left; border-bottom: 1px solid var(--c-border); }
+  .cookies-table thead { background: var(--c-primary); color: var(--c-white); }
+  .cookies-table code { background: var(--c-cream); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.85rem; }
+</style>

@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const faqs = [
+  {
+    section: 'Toz Boya',
+    items: [
+      {
+        q: 'Statik toz boya nedir?',
+        a: 'Negatif yüklü boya partiküllerinin elektrostatik püskürtme yöntemiyle topraklanmış metal yüzeye uygulanması ve ardından yaklaşık 180-200 °C fırın sıcaklığında polimerizasyonla sertleştirilmesi sürecidir. Solvent içermez, çevre dostudur.',
+      },
+      {
+        q: 'Hangi metaller boyanabilir?',
+        a: 'Çelik, alüminyum, paslanmaz, galvaniz ve demir döküm gibi iletken yüzeyler boyanabilir. Plastik, ahşap, MDF gibi iletken olmayan malzemeler için uygun değildir.',
+      },
+      {
+        q: 'Kaç metreye kadar parça boyayabiliyorsunuz?',
+        a: '8 metreye kadar parça boyutunu işleyebilen fırın sistemimiz mevcuttur. Çoğu fason atölyenin 3-4 m üst sınırı varken, biz büyük endüstriyel parçalara çözüm üretebiliyoruz.',
+      },
+      {
+        q: 'Teslim süresi ne kadar?',
+        a: 'Standart işlerde ortalama 2-5 iş günü. Süre parça adedi, renk değişim sayısı ve yüzey hazırlık zorluğuna göre değişir; teklif aşamasında net süre veriyoruz.',
+      },
+      {
+        q: 'Hangi RAL renkleri mevcut?',
+        a: 'RAL Classic palette\'in tamamı (213 standart renk), RAL Design ile 1.625 renk, talep üzerine NCS ve özel eşleştirme sağlanır.',
+      },
+      {
+        q: 'Mat, parlak, dokulu finiş seçenekleri var mı?',
+        a: 'Evet. Mat, parlak, yarı mat, dokulu (texture) ve metalik / pearl (RAL Effect) finiş seçenekleri mevcuttur.',
+      },
+      {
+        q: 'Fiyat nasıl belirleniyor?',
+        a: 'Sabit liste değil. Parça adedi, yüzey alanı, kaplama tipi (epoksi / polyester / poliüretan), renk değişim sayısı ve yüzey hazırlık zorluğu dikkate alınır. Net teklif için parça resmi veya numune fotoğrafı gönderin.',
+      },
+      {
+        q: 'Dış mekan kullanıma uygun mu?',
+        a: 'Polyester veya poliüretan toz boya seçimiyle 10+ yıl UV stabil dış mekan dayanımı sağlanır. Mimari profil, tarım makinesi, çatı elemanı için uzun ömürlüdür.',
+      },
+      {
+        q: 'Çevre dostu mu?',
+        a: 'Evet. Solvent içermez, VOC emisyonu yoktur. Kullanılmayan toz %95+ oranında geri kazanılır. Sıvı boyaya kıyasla atık miktarı düşüktür.',
+      },
+    ],
+  },
+  {
+    section: 'TV Askı Aparatı',
+    items: [
+      {
+        q: 'Hangi VESA standartlarını destekliyorsunuz?',
+        a: 'VESA 75×75 ile 600×400 arasındaki tüm değerleri tek plakada destekleyen evrensel sistemler üretiyoruz. Bu, çoğu TV markası ve 24-100 inç arası ekran boyutu ile uyumlu olduğu anlamına gelir.',
+      },
+      {
+        q: 'Hangi TV markaları ile uyumlu?',
+        a: 'Samsung, LG, Sony, Vestel, Arçelik, Beko, Philips, Panasonic, Hisense, TCL ve VESA standartına uyan tüm markalar. Marka değil, TV\'nin VESA değeri belirleyicidir.',
+      },
+      {
+        q: 'TV\'min VESA değerini nasıl öğrenirim?',
+        a: 'TV kullanım kılavuzu veya arka kapak etiketinde belirtilir. Üretici web sitesinde model adıyla aranınca da görülür. Genellikle "VESA 200×200 mm" şeklinde yazar.',
+      },
+      {
+        q: 'Aparat nelerden üretiliyor?',
+        a: 'Galvaniz çelik gövde + kendi tesisimizde uygulanan matt siyah elektrostatik toz boya. Tüm modellerde kablo yönetim kanalı standarttır.',
+      },
+      {
+        q: 'Montaj kiti dahil mi?',
+        a: 'Evet. Vidalar ve montaj talimatı kutu içinde gönderilir. Standart bir matkap ve seviye ile evde monte edilebilir.',
+      },
+      {
+        q: 'Toptan veya proje siparişi nasıl çalışır?',
+        a: 'AV entegratörü, otel zinciri, perakende grubu veya distribütör iseniz proje bazlı fiyatlandırma yapıyoruz. Tip ve adet bilgisiyle iletişime geçtiğinizde teklif veriyoruz.',
+      },
+    ],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs
+    .flatMap((s) => s.items)
+    .map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+};
+---
+
+<Layout
+  title="Sıkça Sorulan Sorular · Focus SAN"
+  description="Fason elektrostatik toz boya ve VESA TV askı aparatı hakkında en çok sorulan sorular: kapasite, RAL renkler, teslim süresi, montaj, uyumluluk."
+  locale="tr"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">SSS</p>
+      <h1>Sıkça Sorulan Sorular</h1>
+      <p class="lead">
+        Fason toz boya ve TV askı aparatı hakkında müşterilerimizin en sık sorduğu sorular ve net cevapları.
+      </p>
+    </div>
+  </section>
+
+  {faqs.map((section) => (
+    <section class="section faq-section">
+      <div class="container container--narrow">
+        <h2>{section.section}</h2>
+        {section.items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <CTASection
+    locale="tr"
+    title="Sorunuzun cevabı yok mu?"
+    description="WhatsApp veya telefon ile direkt sorabilirsiniz."
+  />
+</Layout>
+
+<style>
+  .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .faq-section { padding: var(--s-5) 0; }
+  .faq-section h2 {
+    margin-bottom: var(--s-4);
+    padding-bottom: var(--s-2);
+    border-bottom: 2px solid var(--c-accent);
+    display: inline-block;
+  }
+
+  .faq-section details {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    margin-bottom: var(--s-2);
+  }
+  .faq-section summary {
+    padding: var(--s-3) var(--s-4);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--c-primary);
+    list-style: none;
+    position: relative;
+  }
+  .faq-section summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--s-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform var(--t);
+  }
+  .faq-section details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .faq-section details p {
+    padding: 0 var(--s-4) var(--s-4);
+    margin: 0;
+    color: var(--c-text-muted);
+    line-height: 1.7;
+  }
+</style>

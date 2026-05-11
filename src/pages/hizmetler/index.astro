@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTASection from '../../components/CTASection.astro';
+---
+
+<Layout
+  title="Hizmetlerimiz · Focus SAN"
+  description="Focus SAN'ın iki ana hizmet kolu: 8 metreye kadar fason elektrostatik toz boya ve VESA standardı TV askı aparatı üretimi."
+  locale="tr"
+>
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">HİZMETLER</p>
+      <h1>İki Ana İş Kolumuz</h1>
+      <p class="lead">
+        Aynı tesiste, aynı kalite standardıyla iki tamamlayıcı iş yürütüyoruz: endüstriyel fason toz boya ve kendi TV askı aparatı üretimimiz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        <a href="/hizmetler/fason-statik-toz-boya" class="service-card">
+          <p class="service-card__tag">HİZMET 1</p>
+          <h2>Fason Elektrostatik Toz Boya</h2>
+          <p>
+            8 metreye kadar parça boyutunda fason toz boya. RAL paletinin tamamı, mat / parlak / yarı mat / dokulu finiş, ortalama 2-5 iş günü teslim. Otomotiv, profil, raf sistemi, elektrik panosu, mimari metalwork, tarım makinesi sektörlerine.
+          </p>
+          <ul>
+            <li>8 m maksimum parça boyu</li>
+            <li>RAL Classic + RAL Design tam palet</li>
+            <li>4 finiş seçeneği (mat, parlak, yarı mat, dokulu)</li>
+            <li>Solvent içermez · çevre dostu</li>
+          </ul>
+          <span class="service-card__action">Detaya git →</span>
+        </a>
+
+        <a href="/hizmetler/tv-aski-aparati" class="service-card">
+          <p class="service-card__tag">HİZMET 2</p>
+          <h2>VESA TV Askı Aparatı Üretimi</h2>
+          <p>
+            Galvaniz çelik gövde + matt siyah elektrostatik toz boya, evrensel VESA uyumu. 4 ürün ailesi: gövde tipi (35-100 cm), 6 kollu hareketli, kelebek, tavan askı. Tek satış, toptan ve proje teklifi.
+          </p>
+          <ul>
+            <li>4 ürün ailesi · 7 ana model</li>
+            <li>VESA 75×75 ile 600×400 evrensel plaka</li>
+            <li>Kablo yönetim kanalı standart</li>
+            <li>B2B proje fiyatlandırması</li>
+          </ul>
+          <span class="service-card__action">Detaya git →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    locale="tr"
+    title="Hangi hizmetimiz size uygun?"
+    description="Talebinizi iletin, yönlendirelim."
+  />
+</Layout>
+
+<style>
+  .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+  }
+  @media (min-width: 800px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .service-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-5);
+    text-decoration: none;
+    color: var(--c-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+  }
+  .service-card:hover {
+    border-color: var(--c-accent);
+    box-shadow: var(--sh-mid);
+    transform: translateY(-2px);
+  }
+
+  .service-card__tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--c-accent-dark);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .service-card h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .service-card p {
+    color: var(--c-text-muted);
+    margin: 0;
+  }
+
+  .service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .service-card li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--c-text);
+    font-size: 0.95rem;
+  }
+  .service-card li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--c-accent);
+    font-weight: 700;
+  }
+
+  .service-card__action {
+    margin-top: auto;
+    color: var(--c-accent-dark);
+    font-weight: 600;
+    padding-top: var(--s-3);
+    border-top: 1px solid var(--c-border);
+  }
+</style>

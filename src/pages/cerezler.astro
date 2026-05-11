@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lastUpdated = '2026-05-11';
+---
+
+<Layout
+  title="Çerez Politikası · Focus SAN"
+  description="Focus SAN web sitesinde kullanılan çerezler ve amaçları. Yalnızca temel teknik çerezler, pazarlama veya izleme çerezi yok."
+  locale="tr"
+>
+  <article class="legal section">
+    <div class="container container--narrow">
+      <p class="legal__eyebrow">HUKUKİ</p>
+      <h1>Çerez Politikası</h1>
+      <p class="legal__updated">Son güncelleme: {lastUpdated}</p>
+
+      <h2>Kısa Özet</h2>
+      <p>
+        focussan.com sitesinde <strong>yalnızca temel (essential) teknik çerezler</strong> kullanılır. <strong>Pazarlama, reklam veya takip çerezi yoktur.</strong> Bu nedenle çerez onayı bandı (cookie banner) göstermiyoruz; KVKK ve GDPR / ePrivacy çerçevesinde gerekli değildir.
+      </p>
+
+      <h2>Kullandığımız Çerezler</h2>
+      <table class="cookies-table">
+        <thead>
+          <tr>
+            <th>Çerez</th>
+            <th>Amaç</th>
+            <th>Süre</th>
+            <th>Tip</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>__cf_bm</code></td>
+            <td>Cloudflare bot koruması (zorunlu güvenlik)</td>
+            <td>30 dk</td>
+            <td>Temel</td>
+          </tr>
+          <tr>
+            <td><code>cf_clearance</code></td>
+            <td>Cloudflare zorlukları geçildiğinde set edilen oturum çerezi</td>
+            <td>1 yıl</td>
+            <td>Temel</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Analitik (Cookieless)</h2>
+      <p>
+        Site trafiğini anlamak için <strong>Cloudflare Web Analytics</strong> kullanırız. Bu çözüm <strong>çerez kullanmaz</strong>, IP adreslerini kişisel veri olarak saklamaz, parmak izi (fingerprinting) çıkarmaz. KVKK ve GDPR uyumludur.
+      </p>
+
+      <h2>Üçüncü Taraf Çerezler</h2>
+      <p>
+        Üçüncü taraf reklam veya sosyal medya çerezleri kullanmıyoruz. Sayfada YouTube veya Facebook gömü (embed) yoktur. WhatsApp linkleri kullanıcı tıklamadıkça herhangi bir çerez set etmez.
+      </p>
+
+      <h2>Çerez Tercihleri</h2>
+      <p>
+        Tarayıcınızdan tüm çerezleri silmek veya engellemek mümkündür; ancak temel güvenlik çerezleri devre dışı bırakılırsa site bot koruması bazı durumlarda sizden ek doğrulama isteyebilir.
+      </p>
+
+      <h2>İletişim</h2>
+      <p>
+        Çerez politikamız hakkında sorularınız için <a href="mailto:muhasebe@focussan.com">muhasebe@focussan.com</a> adresine yazabilirsiniz. KVKK haklarınız için: <a href="/gizlilik">Gizlilik ve KVKK Aydınlatma Metni</a>.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal { padding-top: var(--s-7); padding-bottom: var(--s-7); }
+  .legal__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+  .legal__updated {
+    color: var(--c-text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 var(--s-4);
+  }
+  .legal h2 {
+    margin-top: var(--s-5);
+    font-size: 1.25rem;
+  }
+
+  .cookies-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--s-3) 0;
+    font-size: 0.9rem;
+    background: var(--c-white);
+    border-radius: var(--r-card);
+    overflow: hidden;
+    box-shadow: var(--sh-soft);
+  }
+  .cookies-table th, .cookies-table td {
+    padding: var(--s-2) var(--s-3);
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .cookies-table thead {
+    background: var(--c-primary);
+    color: var(--c-white);
+  }
+  .cookies-table code {
+    background: var(--c-cream);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+</style>

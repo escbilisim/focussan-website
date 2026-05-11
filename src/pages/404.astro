@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT } from '../data/site';
+---
+
+<Layout
+  title="Sayfa Bulunamadı · Focus SAN"
+  description="Aradığınız sayfa bulunamadı. Anasayfaya dönebilir veya ana hizmetlerimize göz atabilirsiniz."
+  locale="tr"
+  noIndex={true}
+>
+  <section class="notfound section">
+    <div class="container container--narrow text-center">
+      <p class="notfound__code">404</p>
+      <h1>Aradığınız sayfa burada değil</h1>
+      <p class="lead">
+        Bağlantı eski olabilir veya yazımda bir hata olabilir. Aşağıdaki sayfalardan devam edebilirsiniz.
+      </p>
+      <p class="lead notfound__en">
+        <em>Page not found. Try one of the links below or switch to <a href="/en">English version →</a></em>
+      </p>
+
+      <div class="notfound__grid">
+        <a href="/" class="quick-link">
+          <strong>Anasayfa</strong>
+          <span>Marka tanıtımı ve özet</span>
+        </a>
+        <a href="/hizmetler/fason-statik-toz-boya" class="quick-link">
+          <strong>Fason Toz Boya</strong>
+          <span>Süreç, kapasite, fiyatlandırma</span>
+        </a>
+        <a href="/hizmetler/tv-aski-aparati" class="quick-link">
+          <strong>TV Askı Aparatı</strong>
+          <span>4 ürün ailesi · VESA standart</span>
+        </a>
+        <a href="/sss" class="quick-link">
+          <strong>Sıkça Sorulanlar</strong>
+          <span>Toz boya ve TV askı sorularına cevaplar</span>
+        </a>
+        <a href="/iletisim" class="quick-link">
+          <strong>İletişim</strong>
+          <span>Telefon, WhatsApp, e-posta</span>
+        </a>
+        <a href={CONTACT.whatsappHref} target="_blank" rel="noopener" class="quick-link quick-link--accent">
+          <strong>Hemen WhatsApp</strong>
+          <span>{CONTACT.whatsapp}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .notfound { padding-top: var(--s-7); padding-bottom: var(--s-7); }
+
+  .notfound__code {
+    color: var(--c-accent);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 var(--s-3);
+    letter-spacing: -0.03em;
+  }
+
+  .notfound__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-3);
+    margin-top: var(--s-5);
+    text-align: left;
+  }
+  @media (min-width: 600px) {
+    .notfound__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 900px) {
+    .notfound__grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .quick-link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-3) var(--s-4);
+    text-decoration: none;
+    color: var(--c-text);
+    transition: border-color var(--t-fast), transform var(--t-fast);
+  }
+  .quick-link:hover {
+    border-color: var(--c-accent);
+    transform: translateY(-2px);
+  }
+  .quick-link strong {
+    color: var(--c-primary);
+  }
+  .quick-link span {
+    color: var(--c-text-muted);
+    font-size: 0.9rem;
+  }
+  .quick-link--accent {
+    background: var(--c-primary);
+    border-color: var(--c-primary);
+  }
+  .quick-link--accent strong { color: var(--c-white); }
+  .quick-link--accent span { color: var(--c-accent-light); }
+  .notfound__en {
+    color: var(--c-text-muted);
+    font-size: 0.95rem;
+    margin-top: var(--s-2);
+  }
+</style>

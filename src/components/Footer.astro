@@ -1,0 +1,146 @@
+---
+import { T, getRoutes, SITE, CONTACT, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = T[locale];
+const r = getRoutes(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <img
+        src="/logo-light.png"
+        alt={SITE.brandName}
+        width="197"
+        height="83"
+        class="site-footer__logo"
+      />
+      <p class="site-footer__tagline">{t.footer.tagline}</p>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>{t.footer.quickLinks}</h4>
+      <ul>
+        <li><a href={r.home}>{t.nav.home}</a></li>
+        <li><a href={r.about}>{t.nav.about}</a></li>
+        <li><a href={r.powderCoating}>{t.nav.powderCoating}</a></li>
+        <li><a href={r.tvMounts}>{t.nav.tvMounts}</a></li>
+        <li><a href={r.faq}>{t.nav.faq}</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>{t.footer.contactTitle}</h4>
+      <ul>
+        <li><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
+        <li><a href={CONTACT.whatsappHref} target="_blank" rel="noopener">WhatsApp: {CONTACT.whatsapp}</a></li>
+        <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+        <li class="site-footer__addr">
+          {CONTACT.address.line1}<br />
+          {CONTACT.address.line2}<br />
+          {CONTACT.address.district}
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>{t.footer.legalTitle}</h4>
+      <ul>
+        <li><a href={r.privacy}>{t.footer.privacy}</a></li>
+        <li><a href={r.cookies}>{t.footer.cookies}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bar">
+    <div class="container site-footer__bar-inner">
+      <p>© {year} {SITE.legalName}. {t.footer.copyright}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--c-primary-deep);
+    color: var(--c-text-light);
+    padding-top: var(--s-7);
+    margin-top: var(--s-8);
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+    padding-bottom: var(--s-6);
+  }
+
+  @media (min-width: 700px) {
+    .site-footer__grid {
+      grid-template-columns: 1.4fr 1fr 1.2fr 0.8fr;
+    }
+  }
+
+  .site-footer__logo {
+    height: 56px;
+    width: auto;
+    display: block;
+    margin-bottom: var(--s-3);
+  }
+
+  .site-footer__tagline {
+    color: var(--c-text-light-muted);
+    margin: 0;
+  }
+
+  .site-footer h4 {
+    color: var(--c-white);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--s-3);
+  }
+
+  .site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .site-footer a {
+    color: var(--c-text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color var(--t-fast);
+  }
+
+  .site-footer a:hover {
+    color: var(--c-accent-light);
+  }
+
+  .site-footer__addr {
+    color: var(--c-text-light-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .site-footer__bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--s-3) 0;
+  }
+
+  .site-footer__bar-inner p {
+    color: var(--c-text-light-muted);
+    font-size: 0.85rem;
+    margin: 0;
+    text-align: center;
+  }
+</style>

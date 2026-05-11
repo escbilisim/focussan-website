@@ -1,0 +1,160 @@
+---
+import { T, getRoutes, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const t = T[locale];
+const r = getRoutes(locale);
+
+const navItems = [
+  { href: r.home, label: t.nav.home },
+  { href: r.about, label: t.nav.about },
+  { href: r.powderCoating, label: t.nav.powderCoating },
+  { href: r.tvMounts, label: t.nav.tvMounts },
+  { href: r.faq, label: t.nav.faq },
+  { href: r.contact, label: t.nav.contact },
+];
+
+const langSwitchPath = locale === 'tr' ? '/en' : '/';
+const langLabel = locale === 'tr' ? 'EN' : 'TR';
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href={r.home} class="site-header__brand" aria-label="Focus SAN">
+      <img
+        src="/logo.png"
+        alt="Focus SAN"
+        width="197"
+        height="83"
+        class="site-header__logo"
+      />
+    </a>
+
+    <nav class="site-header__nav" aria-label={locale === 'tr' ? 'Ana navigasyon' : 'Main navigation'}>
+      <ul>
+        {navItems.map(({ href, label }) => (
+          <li>
+            <a href={href} class:list={['site-header__nav-link', { 'is-active': currentPath === href }]}>{label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a href={langSwitchPath} class="site-header__lang" aria-label={`Switch language to ${langLabel}`}>
+        {langLabel}
+      </a>
+      <a href={r.contact} class="btn btn--primary site-header__cta">{t.cta.getQuote}</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--c-cream);
+    border-bottom: 1px solid var(--c-border);
+    backdrop-filter: blur(8px);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    height: var(--header-h);
+  }
+
+  .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .site-header__logo {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .site-header__logo {
+      height: 36px;
+    }
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  .site-header__nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--s-4);
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-header__nav-link {
+    color: var(--c-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: var(--s-2) 0;
+    border-bottom: 2px solid transparent;
+    transition: color var(--t-fast), border-color var(--t-fast);
+  }
+
+  .site-header__nav-link:hover,
+  .site-header__nav-link.is-active {
+    color: var(--c-accent-dark);
+    border-bottom-color: var(--c-accent);
+  }
+
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+  }
+
+  .site-header__lang {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+    text-decoration: none;
+    padding: var(--s-2) var(--s-3);
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--r-btn);
+    transition: color var(--t-fast), border-color var(--t-fast);
+  }
+
+  .site-header__lang:hover {
+    color: var(--c-primary);
+    border-color: var(--c-primary);
+  }
+
+  .site-header__cta {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 900px) {
+    .site-header__nav {
+      display: block;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .site-header__cta {
+      display: none;
+    }
+  }
+</style>

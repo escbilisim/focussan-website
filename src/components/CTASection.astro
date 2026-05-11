@@ -1,0 +1,36 @@
+---
+import { CONTACT, T, getRoutes, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+}
+
+const { locale, title, description } = Astro.props;
+const t = T[locale];
+const r = getRoutes(locale);
+---
+
+<section class="cta section section--dark">
+  <div class="container container--narrow text-center">
+    <h2>{title}</h2>
+    {description && <p class="lead">{description}</p>}
+    <div class="cta__actions">
+      <a href={r.contact} class="btn btn--primary">{t.cta.getQuote}</a>
+      <a href={CONTACT.whatsappHref} class="btn btn--secondary" target="_blank" rel="noopener">
+        {t.cta.whatsapp}: {CONTACT.whatsapp}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta__actions {
+    display: flex;
+    gap: var(--s-3);
+    justify-content: center;
+    margin-top: var(--s-5);
+    flex-wrap: wrap;
+  }
+</style>

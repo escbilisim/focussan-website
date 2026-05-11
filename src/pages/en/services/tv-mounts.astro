@@ -1,0 +1,219 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CTASection from '../../../components/CTASection.astro';
+
+const productGroupSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProductGroup',
+  name: 'Focus SAN TV Mounting Brackets',
+  description:
+    'Galvanised steel body, matte black electrostatic powder coating, universal VESA-compliant TV mounting brackets. Four product families: fixed body, 6-arm articulating, butterfly, ceiling mount.',
+  brand: { '@type': 'Brand', name: 'Focus SAN' },
+  productGroupID: 'focussan-tv-mounts',
+  hasVariant: [
+    { '@type': 'Product', name: 'Fixed Body 35 cm' },
+    { '@type': 'Product', name: 'Fixed Body 70 cm' },
+    { '@type': 'Product', name: 'Fixed Body 85 cm' },
+    { '@type': 'Product', name: 'Fixed Body 100 cm' },
+    { '@type': 'Product', name: '6-Arm Articulating' },
+    { '@type': 'Product', name: 'Butterfly Articulating' },
+    { '@type': 'Product', name: 'Ceiling Mount' },
+  ],
+};
+
+const families = [
+  {
+    id: 'fixed-body',
+    name: 'Fixed Body',
+    tag: '4 models · 35-100 cm',
+    desc: 'Wall-mounted, non-articulating brackets. Narrow models keep the TV close to the wall; wide models support large screens with extended viewing angles.',
+    models: [
+      { name: 'Narrow 35 cm', tv: '24-43"' },
+      { name: 'Narrow 70 cm', tv: '43-55"' },
+      { name: 'Wide 85 cm', tv: '55-65"' },
+      { name: 'Wide 100 cm', tv: '65-85"' },
+    ],
+    use: 'Living rooms, offices, hotel rooms',
+  },
+  {
+    id: '6-arm',
+    name: '6-Arm Articulating',
+    tag: 'Multi-axis',
+    desc: 'Six-joint arm enabling forward-back extension, left-right swivel and tilt. Designed for professional installations.',
+    models: [{ name: 'Single model', tv: '50-85"' }],
+    use: 'Home cinema, conference rooms, hotel lobbies, broadcast studios, control rooms',
+  },
+  {
+    id: 'butterfly',
+    name: 'Butterfly Articulating',
+    tag: 'Twin-arm butterfly',
+    desc: 'Twin-arm butterfly mechanism. Minimal wall protrusion when closed, broad projection and multi-axis movement when open. Supports heavy TVs.',
+    models: [{ name: 'Single model', tv: '40-75"' }],
+    use: 'Bedrooms, smaller living rooms, spaces requiring flexible viewing',
+  },
+  {
+    id: 'ceiling',
+    name: 'Ceiling Mount',
+    tag: '360° rotation',
+    desc: 'Ceiling-mounted bracket with adjustable pole length for various ceiling heights. 360° rotation for full directional viewing.',
+    models: [{ name: 'Single model, adjustable', tv: '32-65"' }],
+    use: 'Retail stores, restaurants, education facilities, trade shows, airports, hospitals',
+  },
+];
+---
+
+<Layout
+  title="VESA TV Mount Manufacturer Turkey · Galvanised Steel · Focus SAN"
+  description="Galvanised steel body + matte black electrostatic powder coating, universal VESA-compliant TV mounting brackets. Four product families: fixed body (35-100 cm), 6-arm articulating, butterfly, ceiling mount."
+  locale="en"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(productGroupSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">PRODUCT</p>
+      <h1>VESA-Standard TV Mounting Brackets</h1>
+      <p class="lead">
+        Galvanised steel body finished with matte black electrostatic powder coating in our own facility. All models use a universal VESA plate compatible with most TV brands. Cable management channel standard.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tldr">
+    <div class="container container--narrow">
+      <div class="tldr__box">
+        <p class="tldr__label">At a glance</p>
+        <p>
+          Focus SAN manufactures <strong>four families</strong> of TV mounting brackets in galvanised steel finished with matte black powder coating: <strong>fixed body</strong> (35, 70, 85, 100 cm), <strong>6-arm articulating</strong>, <strong>butterfly articulating</strong>, and <strong>ceiling mount</strong>. All models use a universal VESA plate covering 75×75 to 600×400, compatible with most brands and 24-100 inch screens.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section families">
+    <div class="container">
+      <h2>Product Families</h2>
+      <div class="families__grid">
+        {families.map((f) => (
+          <article class="family" id={f.id}>
+            <p class="family__tag">{f.tag}</p>
+            <h3>{f.name}</h3>
+            <p class="family__desc">{f.desc}</p>
+            <ul class="family__models">
+              {f.models.map((m) => (
+                <li><strong>{m.name}</strong><span>{m.tv}</span></li>
+              ))}
+            </ul>
+            <p class="family__use"><strong>Use:</strong> {f.use}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream specs">
+    <div class="container">
+      <h2>Common Technical Specifications</h2>
+      <div class="specs__grid">
+        <div><strong>Body material</strong><span>Galvanised steel (high corrosion resistance)</span></div>
+        <div><strong>Surface coating</strong><span>Matte black electrostatic powder · applied in-house</span></div>
+        <div><strong>VESA compatibility</strong><span>Universal plate covering 75×75 to 600×400</span></div>
+        <div><strong>Brand compatibility</strong><span>Samsung, LG, Sony, Vestel, Arçelik, Beko and any VESA-compliant brand</span></div>
+        <div><strong>Cable management</strong><span>Standard channel system for clean appearance</span></div>
+        <div><strong>Installation kit</strong><span>Screws and instructions included</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section vesa">
+    <div class="container container--narrow">
+      <h2>What is the VESA Standard?</h2>
+      <p>
+        The VESA (Video Electronics Standards Association) Mounting Interface Standard defines the spacing of mounting holes on the back of a TV. To choose the right bracket you only need to know the VESA value your TV supports.
+      </p>
+      <table class="vesa__table">
+        <thead><tr><th>VESA Value</th><th>Typical Screen Size</th></tr></thead>
+        <tbody>
+          <tr><td>75×75 / 100×100</td><td>15-32 inch</td></tr>
+          <tr><td>200×200</td><td>32-37 inch</td></tr>
+          <tr><td>200×100 / 300×300</td><td>37-50 inch</td></tr>
+          <tr><td>400×400</td><td>50-65 inch</td></tr>
+          <tr><td>600×400</td><td>65-75 inch</td></tr>
+          <tr><td>800×400</td><td>75 inch and above</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Focus SAN brackets cover all VESA values from 75×75 to 600×400 in a single universal plate.</p>
+    </div>
+  </section>
+
+  <section class="section section--cream b2b">
+    <div class="container container--narrow text-center">
+      <h2>Wholesale and Project Inquiries</h2>
+      <p class="lead">If you're an AV integrator, hotel chain, retail group, store network or distributor, we offer project-based pricing.</p>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="container container--narrow">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Which TV brands are compatible?</summary>
+        <p>All VESA-compliant brands: Samsung, LG, Sony, Vestel, Arçelik, Beko, Philips, Panasonic, Hisense, TCL and others. The deciding factor is the TV's VESA value, not the brand.</p>
+      </details>
+      <details>
+        <summary>How do I find my TV's VESA value?</summary>
+        <p>Check the user manual or the back panel sticker. It's also listed on the manufacturer's website by model. Usually written as "VESA 200×200 mm".</p>
+      </details>
+      <details>
+        <summary>Is the installation kit included?</summary>
+        <p>Yes. Screws and instructions ship in the box. A standard drill and level are enough for home installation.</p>
+      </details>
+      <details>
+        <summary>Is there a minimum order for wholesale or projects?</summary>
+        <p>We work on a project basis; minimum quantity depends on the project. Reach out with the type and volume to receive a quote.</p>
+      </details>
+    </div>
+  </section>
+
+  <CTASection
+    locale="en"
+    title="Request a wholesale or project quote"
+    description="Send us the type, quantity and delivery point — we'll prepare project-specific pricing."
+  />
+</Layout>
+
+<style>
+  .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
+  .hero__eyebrow { color: var(--c-accent-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-3); }
+  .section--cream { background: var(--c-white); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+  .tldr { padding-top: 0; }
+  .tldr__box { background: var(--c-white); border-left: 4px solid var(--c-accent); padding: var(--s-4); border-radius: var(--r-card); box-shadow: var(--sh-soft); }
+  .tldr__label { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 700; color: var(--c-accent-dark); margin: 0 0 var(--s-2); }
+  .tldr__box p { margin: 0; font-size: 1.05rem; line-height: 1.7; }
+  .families__grid { display: grid; grid-template-columns: 1fr; gap: var(--s-4); margin-top: var(--s-4); }
+  @media (min-width: 800px) { .families__grid { grid-template-columns: 1fr 1fr; } }
+  .family { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-card); padding: var(--s-4); transition: border-color var(--t-fast), box-shadow var(--t-fast); }
+  .family:hover { border-color: var(--c-accent); box-shadow: var(--sh-mid); }
+  .family__tag { display: inline-block; background: var(--c-cream); color: var(--c-accent-dark); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; margin: 0 0 var(--s-2); text-transform: uppercase; letter-spacing: 0.06em; }
+  .family h3 { margin: 0 0 var(--s-2); font-size: 1.25rem; }
+  .family__desc { color: var(--c-text-muted); margin-bottom: var(--s-3); }
+  .family__models { list-style: none; padding: 0; margin: 0 0 var(--s-3); }
+  .family__models li { display: flex; justify-content: space-between; padding: var(--s-2) 0; border-top: 1px dashed var(--c-border); font-size: 0.95rem; }
+  .family__models li:last-child { border-bottom: 1px dashed var(--c-border); }
+  .family__models span { color: var(--c-text-muted); }
+  .family__use { font-size: 0.9rem; color: var(--c-text-muted); margin: 0; }
+  .specs__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--s-3); margin-top: var(--s-4); }
+  .specs__grid > div { background: var(--c-cream); padding: var(--s-3) var(--s-4); border-radius: var(--r-card); border-left: 3px solid var(--c-accent); }
+  .specs__grid strong { display: block; color: var(--c-primary); margin-bottom: 4px; }
+  .specs__grid span { color: var(--c-text-muted); font-size: 0.9rem; line-height: 1.5; }
+  .vesa__table { width: 100%; border-collapse: collapse; margin: var(--s-4) 0 var(--s-3); background: var(--c-white); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--sh-soft); }
+  .vesa__table th, .vesa__table td { padding: var(--s-2) var(--s-3); text-align: left; border-bottom: 1px solid var(--c-border); }
+  .vesa__table thead { background: var(--c-primary); color: var(--c-white); }
+  .vesa__table tbody tr:nth-child(even) { background: var(--c-cream); }
+  .muted { color: var(--c-text-muted); font-size: 0.95rem; }
+  .faq details { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-card); margin-bottom: var(--s-2); }
+  .faq summary { padding: var(--s-3) var(--s-4); cursor: pointer; font-weight: 600; color: var(--c-primary); list-style: none; position: relative; }
+  .faq summary::after { content: '+'; position: absolute; right: var(--s-4); top: 50%; transform: translateY(-50%); color: var(--c-accent); font-size: 1.5rem; line-height: 1; transition: transform var(--t); }
+  .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq details p { padding: 0 var(--s-4) var(--s-4); margin: 0; color: var(--c-text-muted); }
+</style>

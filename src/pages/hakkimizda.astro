@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Focussan Metal Sanayi Ticaret A.Ş.',
+  alternateName: 'Focus SAN',
+  url: 'https://focussan.com',
+  logo: 'https://focussan.com/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'DESB OSB Deliklikaya Mah. GünAlan Caddesi No: 23/1',
+    addressLocality: 'Arnavutköy',
+    addressRegion: 'İstanbul',
+    addressCountry: 'TR',
+  },
+  telephone: '+90 212 873 07 34',
+  email: 'muhasebe@focussan.com',
+  knowsAbout: [
+    'Elektrostatik Toz Boya',
+    'Endüstriyel Metal Kaplama',
+    'VESA TV Askı Aparatı Üretimi',
+    'Galvaniz Çelik',
+    'RAL Renk Sistemi',
+  ],
+};
+---
+
+<Layout
+  title="Hakkımızda · Focus SAN Metal Sanayi"
+  description="Focus SAN, İstanbul Arnavutköy DESB OSB merkezli, endüstriyel fason elektrostatik toz boya ve VESA standardı TV askı aparatı üreticisi. Kalite, zamanında teslim ve dürüst fiyatlandırma."
+  locale="tr"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">HAKKIMIZDA</p>
+      <h1>Focus SAN Metal Sanayi</h1>
+      <p class="lead">
+        İstanbul Arnavutköy DESB Organize Sanayi Bölgesi'nde, endüstriyel fason elektrostatik toz boya uygulamaları ve VESA standardı TV askı aparatı üretimi yapan yerli üreticiyiz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section about-intro">
+    <div class="container container--narrow">
+      <p>
+        İki ana iş kolumuz var: <strong>fason statik toz boya</strong> ve <strong>TV askı aparatı üretimi</strong>. İlk işimizde endüstriyel müşterilere 8 metreye kadar parça boyunda kaplama hizmeti veriyoruz; ikinci işimizde galvaniz çelik üzerine kendi boyamızla matt siyah TV askıları üretiyoruz. İki kol, aynı tesiste, aynı kalite standardıyla yürür.
+      </p>
+      <p>
+        DESB OSB lokasyonu bize iki avantaj sağlar: İstanbul Havalimanı ve TEM otoyolu yakınlığı ile <strong>hızlı sevkiyat</strong>, ve Türkiye'nin en büyük organize sanayi alanlarından birinde olmak nedeniyle <strong>tedarik zinciri kısalığı</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--cream values">
+    <div class="container">
+      <h2>Çalışma Prensiplerimiz</h2>
+      <div class="values__grid">
+        <article>
+          <h3>Kalite</h3>
+          <p>Yüzey hazırlıktan film kalınlık ölçümüne, her aşama dokümante edilmiş kontrol noktalarından geçer. Boya tutmayan bir parça müşteriye gitmez.</p>
+        </article>
+        <article>
+          <h3>Zamanında Teslim</h3>
+          <p>Standart işlerde ortalama 2-5 iş günü. Teklif aşamasında verdiğimiz tarihe sadığız, gecikme olursa önceden haber veririz.</p>
+        </article>
+        <article>
+          <h3>Şeffaf Fiyatlandırma</h3>
+          <p>Toz boya fiyatımız sabit liste değildir; parça adedi, yüzey alanı, kaplama tipi ve renk geçişi gibi faktörler şeffaf biçimde gösterilir.</p>
+        </article>
+        <article>
+          <h3>Sürdürülebilirlik</h3>
+          <p>Statik toz boya solvent içermez, VOC emisyonu yoktur. Kullanılmayan tozun büyük kısmı geri kazanılır, atık miktarı düşüktür.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section capacity">
+    <div class="container">
+      <div class="capacity__grid">
+        <div>
+          <h2>Kapasite</h2>
+          <p>Tesisimiz büyük parça toz boyama ihtiyaçlarını karşılayacak şekilde planlandı. Çoğu fason atölyenin 3-4 m üst sınırı varken, biz <strong>8 metreye kadar</strong> parça işliyoruz.</p>
+        </div>
+        <ul class="capacity__stats">
+          <li><strong>8 m</strong><span>Maks. parça boyu</span></li>
+          <li><strong>RAL</strong><span>Tüm renk paletleri</span></li>
+          <li><strong>2-5 gün</strong><span>Ortalama teslim</span></li>
+          <li><strong>4 finiş</strong><span>Mat, parlak, yarı mat, dokulu</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream location">
+    <div class="container container--narrow">
+      <h2>Konum</h2>
+      <p><strong>DESB OSB</strong> · Deliklikaya Mahallesi GünAlan Caddesi No: 23/1, Arnavutköy / İstanbul</p>
+      <ul class="check-list">
+        <li>İstanbul Havalimanı yakını · ihracat lojistiği</li>
+        <li>TEM ve Kuzey Marmara otoyolu erişimi</li>
+        <li>İstanbul içi günlük sevkiyat ağı</li>
+        <li>Trakya ve Avrupa istikametinde kara yolu avantajı</li>
+      </ul>
+    </div>
+  </section>
+
+  <CTASection
+    locale="tr"
+    title="Birlikte çalışmaya hazır mısınız?"
+    description="Toz boya işiniz veya TV askı projeniz için bize ulaşın."
+  />
+</Layout>
+
+<style>
+  .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .section--cream {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .about-intro p { font-size: 1.05rem; }
+
+  .values__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--s-4);
+    margin-top: var(--s-4);
+  }
+  .values__grid article {
+    background: var(--c-cream);
+    padding: var(--s-4);
+    border-radius: var(--r-card);
+    border-top: 3px solid var(--c-accent);
+  }
+  .values__grid h3 { font-size: 1.1rem; margin: 0 0 var(--s-2); }
+  .values__grid p { color: var(--c-text-muted); font-size: 0.95rem; margin: 0; }
+
+  .capacity__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    align-items: center;
+  }
+  @media (min-width: 800px) {
+    .capacity__grid { grid-template-columns: 1.2fr 1fr; }
+  }
+
+  .capacity__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+  .capacity__stats li {
+    background: var(--c-white);
+    padding: var(--s-3);
+    border-radius: var(--r-card);
+    text-align: center;
+    border: 1px solid var(--c-border);
+  }
+  .capacity__stats strong {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--c-primary);
+    font-weight: 800;
+  }
+  .capacity__stats span { font-size: 0.8rem; color: var(--c-text-muted); }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--s-3) 0 0;
+  }
+  .check-list li {
+    padding: var(--s-2) 0 var(--s-2) 1.75rem;
+    position: relative;
+    border-bottom: 1px dashed var(--c-border);
+  }
+  .check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-accent);
+    font-weight: 700;
+  }
+</style>

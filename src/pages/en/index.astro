@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT } from '../../data/site';
+---
+
+<Layout
+  title="Focus SAN — Industrial Powder Coating & Metal Solutions"
+  description="Istanbul-based domestic manufacturer offering subcontract electrostatic powder coating up to 8 metres and VESA-compliant TV mounting brackets. Located at DESB OSB Arnavutköy."
+  locale="en"
+>
+  <section class="hero section">
+    <div class="container container--narrow text-center">
+      <p class="hero__eyebrow">FOCUS SAN</p>
+      <h1>Industrial Powder Coating &amp; Metal Solutions</h1>
+      <p class="lead">
+        Domestic manufacturer based at DESB OSB, Arnavutköy, Istanbul. Subcontract electrostatic powder coating for parts up to 8 metres, plus VESA-compliant TV mounting brackets.
+      </p>
+      <div class="hero__cta">
+        <a href="/en/contact" class="btn btn--primary">Get a Quote</a>
+        <a href={CONTACT.whatsappHref} class="btn btn--secondary" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section trust">
+    <div class="container">
+      <ul class="trust__grid">
+        <li><strong>8 m</strong><span>Maximum part length</span></li>
+        <li><strong>RAL</strong><span>Full palette access</span></li>
+        <li><strong>2-5 days</strong><span>Average turnaround</span></li>
+        <li><strong>VESA</strong><span>Compliant TV mounts</span></li>
+        <li><strong>DESB OSB</strong><span>Istanbul Arnavutköy</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container container--narrow text-center">
+      <h2>Site under construction</h2>
+      <p>This is a development preview of the new Focus SAN website. Page contents will roll out progressively.</p>
+      <p>
+        <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a>
+        &nbsp;·&nbsp;
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding-top: var(--s-8);
+    padding-bottom: var(--s-7);
+  }
+
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: var(--s-3);
+    justify-content: center;
+    margin-top: var(--s-4);
+    flex-wrap: wrap;
+  }
+
+  .trust {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    padding: var(--s-5) 0;
+  }
+
+  .trust__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--s-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .trust__grid li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .trust__grid strong {
+    font-size: 1.5rem;
+    color: var(--c-primary);
+    font-weight: 800;
+  }
+
+  .trust__grid span {
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+  }
+</style>
