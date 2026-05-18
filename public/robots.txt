@@ -1,0 +1,27 @@
+# Focussan — robots.txt
+# https://focussan.com
+
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Major AI crawlers — content indexing allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://focussan.com/sitemap.xml

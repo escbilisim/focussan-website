@@ -81,6 +81,40 @@ export const T = {
   },
 } as const;
 
+/**
+ * TR ↔ EN path map for hreflang alternates.
+ * Both keys (TR and EN paths) map to the same pair object.
+ * Used by Layout.astro to emit correct hreflang URLs.
+ */
+const PATH_PAIRS: Array<[string, string]> = [
+  ['/', '/en'],
+  ['/hakkimizda', '/en/about'],
+  ['/hizmetler', '/en/services'],
+  ['/hizmetler/statik-toz-boya', '/en/services/powder-coating'],
+  ['/hizmetler/tv-aski-aparati', '/en/services/tv-mounts'],
+  ['/hizmetler/fason-montaj-hatti', '/en/services/contract-assembly'],
+  ['/iletisim', '/en/contact'],
+  ['/sss', '/en/faq'],
+  ['/gizlilik', '/en/privacy'],
+  ['/cerezler', '/en/cookies'],
+];
+
+export function getAlternatePath(currentPath: string): { tr: string; en: string } {
+  // normalise trailing slash
+  const norm = currentPath !== '/' && currentPath.endsWith('/')
+    ? currentPath.slice(0, -1)
+    : currentPath;
+  for (const [tr, en] of PATH_PAIRS) {
+    if (norm === tr || norm === en) return { tr, en };
+  }
+  // fallback: assume identical slug under /en (covers any future symmetric route)
+  if (norm.startsWith('/en')) {
+    const stripped = norm.replace(/^\/en/, '') || '/';
+    return { tr: stripped, en: norm };
+  }
+  return { tr: norm, en: `/en${norm === '/' ? '' : norm}` };
+}
+
 export function getRoutes(locale: Locale) {
   if (locale === 'en') {
     return {

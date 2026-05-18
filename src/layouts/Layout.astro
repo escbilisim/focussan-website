@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE, T, getRoutes, type Locale } from '../data/site';
+import { SITE, CONTACT, T, getRoutes, getAlternatePath, type Locale } from '../data/site';
 
 interface Props {
   title: string;
@@ -26,13 +26,47 @@ const r = getRoutes(locale);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE.domain).toString();
 const ogImageURL = new URL(ogImage, Astro.site ?? SITE.domain).toString();
 
-const pathSansLocale = Astro.url.pathname.replace(/^\/en/, '') || '/';
-const altLocale = locale === 'tr' ? 'en' : 'tr';
-const altURL = altLocale === 'en'
-  ? new URL(`/en${pathSansLocale === '/' ? '' : pathSansLocale}`, Astro.site ?? SITE.domain).toString()
-  : new URL(pathSansLocale, Astro.site ?? SITE.domain).toString();
+const altPaths = getAlternatePath(Astro.url.pathname);
+const trURL = new URL(altPaths.tr === '/' ? '/' : altPaths.tr, Astro.site ?? SITE.domain).toString();
+const enURL = new URL(altPaths.en, Astro.site ?? SITE.domain).toString();
 
 const fullTitle = title.includes(SITE.brandName) ? title : `${title} · ${SITE.brandName}`;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.legalName,
+  alternateName: SITE.brandName,
+  url: SITE.domain,
+  logo: `${SITE.domain}/logo.png`,
+  telephone: CONTACT.phone,
+  email: CONTACT.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${CONTACT.address.line1} ${CONTACT.address.line2}`,
+    addressLocality: 'Arnavutköy',
+    addressRegion: 'İstanbul',
+    addressCountry: 'TR',
+  },
+  knowsAbout: [
+    'Elektrostatik Toz Boya',
+    'Endüstriyel Metal Kaplama',
+    'VESA TV Askı Aparatı Üretimi',
+    'Galvaniz Çelik',
+    'RAL Renk Sistemi',
+    'Fason Montaj ve Paketleme',
+  ],
+  areaServed: { '@type': 'Country', name: 'Turkey' },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.brandName,
+  url: SITE.domain,
+  inLanguage: [locale === 'tr' ? 'tr-TR' : 'en-US'],
+  publisher: { '@type': 'Organization', name: SITE.legalName },
+};
 ---
 
 <!doctype html>
@@ -47,9 +81,9 @@ const fullTitle = title.includes(SITE.brandName) ? title : `${title} · ${SITE.b
   {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
   <link rel="canonical" href={canonicalURL} />
-  <link rel="alternate" hreflang="tr" href={locale === 'tr' ? canonicalURL : altURL} />
-  <link rel="alternate" hreflang="en" href={locale === 'en' ? canonicalURL : altURL} />
-  <link rel="alternate" hreflang="x-default" href={locale === 'tr' ? canonicalURL : altURL} />
+  <link rel="alternate" hreflang="tr" href={trURL} />
+  <link rel="alternate" hreflang="en" href={enURL} />
+  <link rel="alternate" hreflang="x-default" href={trURL} />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content={fullTitle} />
@@ -71,6 +105,9 @@ const fullTitle = title.includes(SITE.brandName) ? title : `${title} · ${SITE.b
     type="font/woff2"
     crossorigin="anonymous"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 </head>
 <body>
   <a href="#main" class="skip-link">{t.skipLink}</a>

@@ -1,34 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTASection from '../../components/CTASection.astro';
-
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Focussan Metal Sanayi Ticaret A.Ş.',
-  alternateName: 'Focussan',
-  url: 'https://focussan.com',
-  logo: 'https://focussan.com/logo.png',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'DESB OSB Deliklikaya Mah. GünAlan Caddesi No: 23/1',
-    addressLocality: 'Arnavutköy',
-    addressRegion: 'İstanbul',
-    addressCountry: 'TR',
-  },
-  telephone: '+90 212 873 07 34',
-  email: 'muhasebe@focussan.com',
-  knowsAbout: ['Electrostatic Powder Coating', 'Industrial Metal Coating', 'VESA TV Mounting Brackets', 'Galvanised Steel'],
-};
 ---
 
 <Layout
   title="About · Focussan Metal Manufacturing"
   description="Focussan is a domestic Turkish manufacturer based at DESB OSB Arnavutköy, Istanbul. Industrial powder coating, VESA-compliant TV mounting brackets, and contract assembly + packaging."
   locale="en"
+  ogImage="/og/about.png"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
-
   <section class="hero section">
     <div class="container container--narrow">
       <p class="hero__eyebrow">ABOUT</p>

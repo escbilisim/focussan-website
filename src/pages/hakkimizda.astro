@@ -1,40 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTASection from '../components/CTASection.astro';
-
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Focussan Metal Sanayi Ticaret A.Ş.',
-  alternateName: 'Focussan',
-  url: 'https://focussan.com',
-  logo: 'https://focussan.com/logo.png',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'DESB OSB Deliklikaya Mah. GünAlan Caddesi No: 23/1',
-    addressLocality: 'Arnavutköy',
-    addressRegion: 'İstanbul',
-    addressCountry: 'TR',
-  },
-  telephone: '+90 212 873 07 34',
-  email: 'muhasebe@focussan.com',
-  knowsAbout: [
-    'Elektrostatik Toz Boya',
-    'Endüstriyel Metal Kaplama',
-    'VESA TV Askı Aparatı Üretimi',
-    'Galvaniz Çelik',
-    'RAL Renk Sistemi',
-  ],
-};
 ---
 
 <Layout
   title="Hakkımızda · Focussan Metal Sanayi"
   description="Focussan, İstanbul Arnavutköy DESB OSB merkezli, endüstriyel fason elektrostatik toz boya ve VESA standardı TV askı aparatı üreticisi. Kalite, zamanında teslim ve dürüst fiyatlandırma."
   locale="tr"
+  ogImage="/og/hakkimizda.png"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
-
   <section class="hero section">
     <div class="container container--narrow">
       <p class="hero__eyebrow">HAKKIMIZDA</p>
