@@ -87,6 +87,22 @@ const serviceSchema = {
     </div>
   </section>
 
+  <section class="section media-section">
+    <div class="container">
+      <figure class="figure-band">
+        <img
+          src="/images/statik1.webp"
+          width="2400"
+          height="1600"
+          loading="lazy"
+          decoding="async"
+          alt="Toz boya hattında askıya alınmış alüminyum profiller"
+        />
+        <figcaption>Parçalar askı hattına dizilir; elektrostatik kaplama tüm yüzeye uniform uygulanır.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section section--cream capacity">
     <div class="container">
       <div class="capacity__grid">
@@ -103,6 +119,31 @@ const serviceSchema = {
           <li><strong>180-200 °C</strong><span>Fırın sıcaklığı</span></li>
           <li><strong>10+ yıl</strong><span>UV stabil dış mekan dayanımı</span></li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section media-split-section">
+    <div class="container">
+      <div class="media-split media-split--reverse">
+        <div class="media-split__text">
+          <p class="media-split__eyebrow">ASKI HATTI</p>
+          <h2>Konveyörde uniform kaplama</h2>
+          <p>
+            Parçalar konveyör askısına dizilir ve hat boyunca sırasıyla yüzey hazırlık, elektrostatik püskürtme ve fırınlama istasyonlarından geçer. Askıda durması, boyanın köşe ve oluk dahil tüm yüzeye eşit tutunmasını sağlar; 8 metreye kadar uzun profiller tek seferde işlenir.
+          </p>
+        </div>
+        <figure class="media-split__figure">
+          <img
+            class="media-split__img"
+            src="/images/statik2.webp"
+            width="1600"
+            height="2400"
+            loading="lazy"
+            decoding="async"
+            alt="Toz boya konveyör hattında askıya dizilmiş alüminyum profillerin perspektif görünümü"
+          />
+        </figure>
       </div>
     </div>
   </section>
@@ -232,6 +273,53 @@ const serviceSchema = {
     background: var(--c-white);
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
+  }
+
+  /* ===== Media (figure band + split) ===== */
+  .media-section { padding-top: 0; }
+
+  .figure-band { margin: 0; }
+  .figure-band img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-mid);
+  }
+  .figure-band figcaption {
+    margin-top: var(--s-3);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--c-text-muted);
+  }
+
+  .media-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    align-items: center;
+  }
+  @media (min-width: 820px) {
+    .media-split--reverse { grid-template-columns: 1fr 0.8fr; }
+  }
+  .media-split__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-2);
+  }
+  .media-split__text h2 { margin: 0 0 var(--s-3); }
+  .media-split__text p { margin: 0; color: var(--c-text-muted); }
+  .media-split__figure { margin: 0; }
+  .media-split__img {
+    width: 100%;
+    height: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-mid);
   }
 
   .tldr {

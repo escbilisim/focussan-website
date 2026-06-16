@@ -92,6 +92,22 @@ const serviceSchema = {
     </div>
   </section>
 
+  <section class="section media-section">
+    <div class="container">
+      <figure class="figure-band">
+        <img
+          src="/images/montaj2.webp"
+          width="2400"
+          height="1600"
+          loading="lazy"
+          decoding="async"
+          alt="Focussan montaj hattında çalışanlar, boyalı parçaları komponentlerle birleştiriyor"
+        />
+        <figcaption>Montaj hattımızda boyalı parçalar, gelen alt komponentlerle eş zamanlı birleştirilir.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section section--cream value">
     <div class="container">
       <div class="value__grid">
@@ -116,6 +132,30 @@ const serviceSchema = {
     <div class="container">
       <h2>Hangi Ürünler İçin Uygun?</h2>
       <p>Metal ana yapı + ek komponent gerektiren her ürün için uygundur. Birkaç tipik örnek:</p>
+      <div class="gallery-duo">
+        <figure>
+          <img
+            src="/images/montaj1.webp"
+            width="1600"
+            height="2400"
+            loading="lazy"
+            decoding="async"
+            alt="Focussan çalışanı, kablo ve alt komponentleri elde montajlıyor"
+          />
+          <figcaption>El işçiliğiyle hassas komponent montajı.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/montaj3.webp"
+            width="2400"
+            height="1600"
+            loading="lazy"
+            decoding="async"
+            alt="Elektrikli tornavida ile parça üzerinde montaj işlemi"
+          />
+          <figcaption>Vida torku ve dizilim, şartnameye göre uygulanır.</figcaption>
+        </figure>
+      </div>
       <div class="use-cases__grid">
         <div><strong>TV askı aparatları</strong><span>Galvaniz çelik gövde + vida seti + duvar plakası + kullanım kılavuzu (kendi VESA ürünlerimizi bu hatta üretiyoruz)</span></div>
         <div><strong>Elektrik panosu kabinleri</strong><span>Boyalı sac kabin + iç DIN ray + kapak menteşesi + etiketleme</span></div>
@@ -211,6 +251,50 @@ const serviceSchema = {
     background: var(--c-white);
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
+  }
+
+  /* ===== Media (figure band + duo gallery) ===== */
+  .media-section { padding-top: 0; }
+
+  .figure-band {
+    margin: 0;
+  }
+  .figure-band img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-mid);
+  }
+  .figure-band figcaption {
+    margin-top: var(--s-3);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--c-text-muted);
+  }
+
+  .gallery-duo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+    margin: var(--s-5) 0;
+  }
+  @media (min-width: 720px) {
+    .gallery-duo { grid-template-columns: 1fr 1fr; }
+  }
+  .gallery-duo figure { margin: 0; }
+  .gallery-duo img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-mid);
+  }
+  .gallery-duo figcaption {
+    margin-top: var(--s-2);
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
   }
 
   .tldr { padding-top: 0; }
