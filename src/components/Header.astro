@@ -1,5 +1,5 @@
 ---
-import { T, getRoutes, type Locale } from '../data/site';
+import { CONTACT, T, getRoutes, type Locale } from '../data/site';
 
 interface Props {
   locale: Locale;
@@ -48,7 +48,7 @@ const langLabel = locale === 'tr' ? 'EN' : 'TR';
       <a href={langSwitchPath} class="site-header__lang" aria-label={`Switch language to ${langLabel}`}>
         {langLabel}
       </a>
-      <a href={r.contact} class="btn btn--primary site-header__cta">{t.cta.getQuote}</a>
+      <a href={CONTACT.whatsappHref} class="btn btn--primary site-header__cta" target="_blank" rel="noopener">{t.cta.getQuote}</a>
     </div>
   </div>
 </header>

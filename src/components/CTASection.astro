@@ -17,10 +17,7 @@ const r = getRoutes(locale);
     <h2>{title}</h2>
     {description && <p class="lead">{description}</p>}
     <div class="cta__actions">
-      <a href={r.contact} class="btn btn--primary">{t.cta.getQuote}</a>
-      <a href={CONTACT.whatsappHref} class="btn btn--secondary" target="_blank" rel="noopener">
-        {t.cta.whatsapp}: {CONTACT.whatsapp}
-      </a>
+      <a href={CONTACT.whatsappHref} class="btn btn--primary" target="_blank" rel="noopener">{t.cta.getQuote}</a>
     </div>
   </div>
 </section>
