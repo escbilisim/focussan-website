@@ -112,6 +112,34 @@ const families = [
     </div>
   </section>
 
+  <section class="section product-video">
+    <div class="container container--narrow">
+      <div class="product-video__head">
+        <p class="product-video__eyebrow">PRODUCT VIDEO</p>
+        <h2>A closer look at our TV mount</h2>
+      </div>
+
+      <div class="product-video__frame">
+        <video
+          id="tv-mount-video"
+          controls
+          preload="none"
+          poster="/videos/focussan-tv-aski-poster.jpg"
+          playsinline
+        >
+          <source src="/videos/focussan-tv-aski.webm" type="video/webm" />
+          <source src="/videos/focussan-tv-aski.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+        <button class="product-video__play" type="button" aria-label="Play product video">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section class="section section--cream specs">
     <div class="container">
       <h2>Common Technical Specifications</h2>
@@ -183,10 +211,38 @@ const families = [
   />
 </Layout>
 
+<script>
+  const video = document.getElementById('tv-mount-video') as HTMLVideoElement | null;
+  const btn = document.querySelector<HTMLButtonElement>('.product-video__play');
+  if (video && btn) {
+    const hide = () => btn.setAttribute('hidden', '');
+    const show = () => btn.removeAttribute('hidden');
+    btn.addEventListener('click', () => {
+      video.play();
+      hide();
+    });
+    video.addEventListener('play', hide);
+    video.addEventListener('ended', show);
+  }
+</script>
+
 <style>
   .hero { padding-top: var(--s-7); padding-bottom: var(--s-5); }
   .hero__eyebrow { color: var(--c-accent-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-3); }
   .section--cream { background: var(--c-white); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+
+  /* ===== Product video (vertical 9:16) ===== */
+  .product-video { background: var(--c-primary-deep); color: var(--c-text-light); }
+  .product-video__head { text-align: center; margin-bottom: var(--s-5); }
+  .product-video__eyebrow { color: var(--c-accent-light); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; margin: 0 0 var(--s-2); }
+  .product-video__head h2 { color: var(--c-white); margin: 0; }
+  .product-video__frame { position: relative; width: 100%; max-width: 360px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: var(--r-lg); overflow: hidden; background: #000; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; }
+  .product-video__frame video { width: 100%; height: 100%; object-fit: cover; }
+  .product-video__play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 50%; background: rgba(255, 106, 0, 0.92); border: 4px solid rgba(255, 255, 255, 0.92); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; padding: 0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); transition: background var(--t-fast), transform var(--t-fast); }
+  .product-video__play:hover, .product-video__play:focus-visible { background: var(--c-accent); transform: translate(-50%, -50%) scale(1.06); }
+  .product-video__play svg { width: 34px; height: 34px; fill: #fff; margin-left: 4px; }
+  .product-video__play[hidden] { display: none; }
+
   .tldr { padding-top: 0; }
   .tldr__box { background: var(--c-white); border-left: 4px solid var(--c-accent); padding: var(--s-4); border-radius: var(--r-card); box-shadow: var(--sh-soft); }
   .tldr__label { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 700; color: var(--c-accent-dark); margin: 0 0 var(--s-2); }

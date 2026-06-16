@@ -92,6 +92,22 @@ const serviceSchema = {
     </div>
   </section>
 
+  <section class="section media-section">
+    <div class="container">
+      <figure class="figure-band">
+        <img
+          src="/images/montaj2.webp"
+          width="2400"
+          height="1600"
+          loading="lazy"
+          decoding="async"
+          alt="Workers on the Focussan assembly line combining coated parts with components"
+        />
+        <figcaption>On our assembly line, coated parts are combined with incoming sub-components in real time.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section section--cream value">
     <div class="container">
       <div class="value__grid">
@@ -116,6 +132,30 @@ const serviceSchema = {
     <div class="container">
       <h2>Suitable Product Types</h2>
       <p>Any product with a metal main body plus additional sub-components. Typical examples:</p>
+      <div class="gallery-duo">
+        <figure>
+          <img
+            src="/images/montaj1.webp"
+            width="1600"
+            height="2400"
+            loading="lazy"
+            decoding="async"
+            alt="Focussan worker hand-assembling cables and sub-components"
+          />
+          <figcaption>Precise component assembly by hand.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/montaj3.webp"
+            width="2400"
+            height="1600"
+            loading="lazy"
+            decoding="async"
+            alt="Assembly with a power screwdriver on a coated part"
+          />
+          <figcaption>Screw torque and sequencing applied to specification.</figcaption>
+        </figure>
+      </div>
       <div class="use-cases__grid">
         <div><strong>TV mounting brackets</strong><span>Galvanised steel body + screw set + wall plate + user guide (we manufacture our own VESA products on this line)</span></div>
         <div><strong>Electrical enclosure cabinets</strong><span>Coated steel cabinet + internal DIN rails + hinge + label set</span></div>
@@ -211,6 +251,50 @@ const serviceSchema = {
     background: var(--c-white);
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
+  }
+
+  /* ===== Media (figure band + duo gallery) ===== */
+  .media-section { padding-top: 0; }
+
+  .figure-band {
+    margin: 0;
+  }
+  .figure-band img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-mid);
+  }
+  .figure-band figcaption {
+    margin-top: var(--s-3);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--c-text-muted);
+  }
+
+  .gallery-duo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+    margin: var(--s-5) 0;
+  }
+  @media (min-width: 720px) {
+    .gallery-duo { grid-template-columns: 1fr 1fr; }
+  }
+  .gallery-duo figure { margin: 0; }
+  .gallery-duo img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--r-lg);
+    box-shadow: var(--sh-mid);
+  }
+  .gallery-duo figcaption {
+    margin-top: var(--s-2);
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
   }
 
   .tldr { padding-top: 0; }
