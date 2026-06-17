@@ -44,6 +44,8 @@ const PAGES = [
   { slug: 'contact', eyebrow: 'CONTACT', title: '+90 212 873 07 34 · WhatsApp: +90 538 684 7373' },
   { slug: 'sss', eyebrow: 'SIKÇA SORULAN SORULAR', title: 'Toz boya, fiyatlandırma, teslim süresi' },
   { slug: 'faq', eyebrow: 'FREQUENTLY ASKED QUESTIONS', title: 'Powder coating, pricing, lead times' },
+  { slug: 'galeri', eyebrow: 'GALERİ', title: 'Üretimden fotoğraflar ve videolar' },
+  { slug: 'gallery', eyebrow: 'GALLERY', title: 'Photos and videos from our facility' },
 ];
 
 function buildTree(eyebrow, title) {

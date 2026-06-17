@@ -1,0 +1,5 @@
+# Focussan — security contact (RFC 9116)
+Contact: mailto:muhasebe@focussan.com
+Expires: 2027-06-17T00:00:00.000Z
+Preferred-Languages: tr, en
+Canonical: https://focussan.com/.well-known/security.txt

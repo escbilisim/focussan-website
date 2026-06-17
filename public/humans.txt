@@ -1,0 +1,18 @@
+/* TEAM */
+  Company: Focussan Metal Sanayi Ticaret A.Ş.
+  Brand: Focussan
+  Location: DESB OSB Deliklikaya Mah., Arnavutköy, İstanbul, Türkiye
+  Contact: muhasebe [at] focussan.com
+
+/* DEVELOPMENT */
+  Agency: ESC Bilişim
+  Developer: Murat Özsaygılı
+  GitHub: github.com/escbilisim
+
+/* SITE */
+  Last update: 2026-06-17
+  Language: Türkçe (tr) / English (en)
+  Standards: HTML5, CSS3, JSON-LD
+  Framework: Astro 5
+  Hosting: Cloudflare Pages
+  Fonts: Inter (self-hosted)
