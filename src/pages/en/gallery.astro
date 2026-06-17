@@ -1,0 +1,226 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Lightbox from '../../components/Lightbox.astro';
+
+const photos = [
+  'statik1', 'montaj2', 'montaj3', 'statik2', 'montaj1', 'montaj4',
+  'DSC04897', 'DSC04901', 'DSC04902', 'DSC04904', 'DSC04905', 'DSC04906',
+  'DSC04907', 'DSC04908', 'DSC04888', 'DSC04890', 'DSC04909', 'DSC04910', 'DSC04911',
+];
+
+const portraitSet = new Set([
+  'DSC04888', 'DSC04890', 'DSC04909', 'DSC04910', 'DSC04911', 'montaj1', 'statik2',
+]);
+
+function altFor(name: string): string {
+  if (name.startsWith('statik')) return 'Focussan electrostatic powder coating line';
+  if (name.startsWith('montaj')) return 'Focussan contract assembly line';
+  return 'Focussan production facility';
+}
+
+const videos = [
+  { slug: 'focussan-tanitim', title: 'Company Film', portrait: false },
+  { slug: 'focussan-edit2', title: 'Factory Tour', portrait: false },
+  { slug: 'focussan-tv-aski', title: 'TV Mounting Bracket', portrait: true },
+];
+---
+
+<Layout
+  title="Gallery · Focussan"
+  description="Photos and videos from the Focussan facility: electrostatic powder coating line, contract assembly line and VESA TV mounting bracket production."
+  locale="en"
+>
+  <section class="hero section">
+    <div class="container container--narrow">
+      <p class="hero__eyebrow">GALLERY</p>
+      <h1>Inside the Facility</h1>
+      <p class="lead">
+        Photos and videos from the Focussan facility. Real frames from the electrostatic powder coating line, the contract assembly line and VESA TV mounting bracket production.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="gallery-heading">Photos</h2>
+      <div class="gallery-masonry">
+        {photos.map((name) => (
+          <img
+            src={`/images/gallery/${name}.webp`}
+            width={portraitSet.has(name) ? 1600 : 2400}
+            height={portraitSet.has(name) ? 2400 : 1600}
+            loading="lazy"
+            decoding="async"
+            alt={altFor(name)}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <h2 class="gallery-heading">Videos</h2>
+      <div class="gallery-videos">
+        {videos.map((v) => (
+          <figure class:list={['gallery-video', { 'gallery-video--portrait': v.portrait }]}>
+            <div class="gallery-video__frame">
+              <video
+                controls
+                preload="none"
+                poster={`/videos/${v.slug}-poster.jpg`}
+                playsinline
+              >
+                <source src={`/videos/${v.slug}.webm`} type="video/webm" />
+                <source src={`/videos/${v.slug}.mp4`} type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+              <button class="gallery-video__play" type="button" aria-label={`Play ${v.title} video`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+            <figcaption>{v.title}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Lightbox locale="en" />
+</Layout>
+
+<script>
+  document.querySelectorAll('.gallery-video__frame').forEach((frame) => {
+    const video = frame.querySelector('video');
+    const btn = frame.querySelector<HTMLButtonElement>('.gallery-video__play');
+    if (!video || !btn) return;
+    const hide = () => btn.setAttribute('hidden', '');
+    const show = () => btn.removeAttribute('hidden');
+    btn.addEventListener('click', () => {
+      video.play();
+      hide();
+    });
+    video.addEventListener('play', hide);
+    video.addEventListener('ended', show);
+  });
+</script>
+
+<style>
+  .hero {
+    padding-top: var(--s-7);
+    padding-bottom: var(--s-5);
+  }
+  .hero__eyebrow {
+    color: var(--c-accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 var(--s-3);
+  }
+
+  .section--cream {
+    background: var(--c-white);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .gallery-heading {
+    margin: 0 0 var(--s-4);
+  }
+
+  /* ===== Photo masonry (CSS columns, mixed orientation) ===== */
+  .gallery-masonry {
+    column-count: 1;
+    column-gap: var(--s-4);
+  }
+  @media (min-width: 560px) {
+    .gallery-masonry { column-count: 2; }
+  }
+  @media (min-width: 920px) {
+    .gallery-masonry { column-count: 3; }
+  }
+  .gallery-masonry img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--r-card);
+    margin: 0 0 var(--s-4);
+    break-inside: avoid;
+    box-shadow: var(--sh-soft);
+    background: var(--c-cream);
+  }
+
+  /* ===== Videos ===== */
+  .gallery-videos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-6);
+    align-items: center;
+  }
+  .gallery-video {
+    margin: 0;
+    width: 100%;
+    max-width: 860px;
+  }
+  .gallery-video--portrait {
+    max-width: 360px;
+  }
+  .gallery-video__frame {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--c-border);
+    aspect-ratio: 16 / 9;
+    display: flex;
+  }
+  .gallery-video--portrait .gallery-video__frame {
+    aspect-ratio: 9 / 16;
+  }
+  .gallery-video__frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gallery-video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 106, 0, 0.92);
+    border: 4px solid rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: background var(--t-fast), transform var(--t-fast);
+  }
+  .gallery-video__play:hover,
+  .gallery-video__play:focus-visible {
+    background: var(--c-accent);
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  .gallery-video__play svg {
+    width: 34px;
+    height: 34px;
+    fill: #fff;
+    margin-left: 4px;
+  }
+  .gallery-video__play[hidden] {
+    display: none;
+  }
+  .gallery-video figcaption {
+    margin-top: var(--s-3);
+    text-align: center;
+    font-weight: 600;
+    color: var(--c-primary);
+  }
+</style>

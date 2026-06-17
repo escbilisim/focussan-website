@@ -13,6 +13,7 @@ const PAGE_PAIRS: Array<{ tr: string; en: string; priority: string }> = [
   { tr: '/hizmetler/statik-toz-boya', en: '/en/services/powder-coating', priority: '0.9' },
   { tr: '/hizmetler/tv-aski-aparati', en: '/en/services/tv-mounts', priority: '0.9' },
   { tr: '/hizmetler/fason-montaj-hatti', en: '/en/services/contract-assembly', priority: '0.9' },
+  { tr: '/galeri', en: '/en/gallery', priority: '0.7' },
   { tr: '/iletisim', en: '/en/contact', priority: '0.8' },
   { tr: '/sss', en: '/en/faq', priority: '0.6' },
   { tr: '/gizlilik', en: '/en/privacy', priority: '0.3' },
