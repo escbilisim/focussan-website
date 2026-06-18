@@ -29,8 +29,8 @@
   /* === Renk: Vurgu (endüstriyel turuncu, fırın/curing) === */
   --c-accent:         #FF6A00;
   --c-accent-light:   #FF8533;
-  --c-accent-dark:    #C44E00;
-  --c-accent-text:    #C44E00;
+  --c-accent-dark:    #B34700;
+  --c-accent-text:    #B34700;
 
   /* === Nötr === */
   --c-white:          #FFFFFF;
@@ -197,12 +197,14 @@ p { margin: 0 0 var(--s-3); }
 
 .btn--primary {
   background: var(--c-accent);
-  color: var(--c-white);
+  /* Graphite text on vivid orange => WCAG AA (~5.8:1); white-on-orange failed (~2.7:1) */
+  color: var(--c-primary);
+  font-weight: 700;
 }
 
 .btn--primary:hover {
   background: var(--c-accent-light);
-  color: var(--c-white);
+  color: var(--c-primary);
   transform: translateY(-1px);
 }
 

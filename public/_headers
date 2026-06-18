@@ -5,6 +5,7 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000
 
 # Fonts never change (stable filenames) — cache hard

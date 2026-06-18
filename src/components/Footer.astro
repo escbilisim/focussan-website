@@ -37,7 +37,7 @@ const year = new Date().getFullYear();
     <div class="site-footer__brand">
       <div class="site-footer__logo-card">
         <img
-          src="/logo.png"
+          src="/logo.webp"
           alt={SITE.brandName}
           width="197"
           height="83"
@@ -48,7 +48,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="site-footer__col">
-      <h4>{t.footer.quickLinks}</h4>
+      <h3>{t.footer.quickLinks}</h3>
       <ul>
         <li><a href={r.home}>{t.nav.home}</a></li>
         <li><a href={r.about}>{t.nav.about}</a></li>
@@ -61,7 +61,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="site-footer__col">
-      <h4>{t.footer.contactTitle}</h4>
+      <h3>{t.footer.contactTitle}</h3>
       <ul>
         <li><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
         <li><a href={CONTACT.whatsappHref} target="_blank" rel="noopener">WhatsApp: {CONTACT.whatsapp}</a></li>
@@ -75,7 +75,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="site-footer__col">
-      <h4>{t.footer.legalTitle}</h4>
+      <h3>{t.footer.legalTitle}</h3>
       <ul>
         <li><a href={r.privacy}>{t.footer.privacy}</a></li>
         <li><a href={r.cookies}>{t.footer.cookies}</a></li>
@@ -171,7 +171,7 @@ const year = new Date().getFullYear();
     margin: 0;
   }
 
-  .site-footer h4 {
+  .site-footer h3 {
     color: var(--c-white);
     font-size: 0.95rem;
     text-transform: uppercase;
