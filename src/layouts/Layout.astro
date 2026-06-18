@@ -23,10 +23,15 @@ const {
 const t = T[locale];
 const r = getRoutes(locale);
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE.domain).toString();
+// The `file` build format appends a `.html` suffix to Astro.url.pathname (e.g. /galeri.html).
+// Strip it so canonical, OG url and hreflang match the clean URL Cloudflare Pages serves (/galeri).
+let cleanPath = Astro.url.pathname.replace(/\.html$/, '');
+if (cleanPath === '/index' || cleanPath === '') cleanPath = '/';
+
+const canonicalURL = new URL(cleanPath, Astro.site ?? SITE.domain).toString();
 const ogImageURL = new URL(ogImage, Astro.site ?? SITE.domain).toString();
 
-const altPaths = getAlternatePath(Astro.url.pathname);
+const altPaths = getAlternatePath(cleanPath);
 const trURL = new URL(altPaths.tr === '/' ? '/' : altPaths.tr, Astro.site ?? SITE.domain).toString();
 const enURL = new URL(altPaths.en, Astro.site ?? SITE.domain).toString();
 
