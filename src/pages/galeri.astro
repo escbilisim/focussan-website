@@ -2,22 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Lightbox from '../components/Lightbox.astro';
 
-const photos = [
-  'statik1', 'montaj2', 'montaj3', 'statik2', 'montaj1', 'montaj4',
-  'DSC04897', 'DSC04901', 'DSC04902', 'DSC04904', 'DSC04905', 'DSC04906',
-  'DSC04907', 'DSC04908', 'DSC04888', 'DSC04890', 'DSC04909', 'DSC04910', 'DSC04911',
-];
-
-const portraitSet = new Set([
-  'DSC04888', 'DSC04890', 'DSC04909', 'DSC04910', 'DSC04911', 'montaj1', 'statik2',
-]);
-
-function altFor(name: string): string {
-  if (name.startsWith('statik')) return 'Focussan elektrostatik toz boya hattı';
-  if (name.startsWith('montaj')) return 'Focussan fason montaj hattı';
-  return 'Focussan üretim tesisi';
-}
-
 const videos = [
   { slug: 'focussan-tanitim', title: 'Tanıtım Filmi', portrait: false },
   { slug: 'focussan-edit2', title: 'Fabrika Turu', portrait: false },
@@ -44,18 +28,16 @@ const videos = [
   <section class="section">
     <div class="container">
       <h2 class="gallery-heading">Fotoğraflar</h2>
-      <div class="gallery-masonry">
-        {photos.map((name) => (
-          <img
-            src={`/images/gallery/${name}.webp`}
-            width={portraitSet.has(name) ? 1600 : 2400}
-            height={portraitSet.has(name) ? 2400 : 1600}
-            loading="lazy"
-            decoding="async"
-            alt={altFor(name)}
-          />
-        ))}
-      </div>
+      <figure class="gallery-single">
+        <img
+          src="/images/gallery/montaj-hatti.webp"
+          width="2528"
+          height="1686"
+          loading="lazy"
+          decoding="async"
+          alt="Focussan fason montaj hattı: ürün montajı, kalite kontrol, paketleme ve sevkiyat"
+        />
+      </figure>
     </div>
   </section>
 
@@ -131,24 +113,16 @@ const videos = [
     margin: 0 0 var(--s-4);
   }
 
-  /* ===== Photo masonry (CSS columns, mixed orientation) ===== */
-  .gallery-masonry {
-    column-count: 1;
-    column-gap: var(--s-4);
+  /* ===== Single showcase photo ===== */
+  .gallery-single {
+    margin: 0 auto;
+    max-width: 1100px;
   }
-  @media (min-width: 560px) {
-    .gallery-masonry { column-count: 2; }
-  }
-  @media (min-width: 920px) {
-    .gallery-masonry { column-count: 3; }
-  }
-  .gallery-masonry img {
+  .gallery-single img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: var(--r-card);
-    margin: 0 0 var(--s-4);
-    break-inside: avoid;
     box-shadow: var(--sh-soft);
     background: var(--c-cream);
   }

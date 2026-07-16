@@ -27,7 +27,7 @@ const L =
 <script>
   const lb = document.getElementById('lightbox');
   const thumbs = Array.from(
-    document.querySelectorAll<HTMLImageElement>('.gallery-masonry img')
+    document.querySelectorAll<HTMLImageElement>('.gallery-single img, .gallery-masonry img')
   );
   if (lb && thumbs.length) {
     const img = lb.querySelector<HTMLImageElement>('.lightbox__img')!;
